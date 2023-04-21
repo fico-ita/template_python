@@ -26,7 +26,8 @@ Para a organização da documentação de usuário, baseie-se na proposta de
 1. Reference
 1. Explanation
 
-> **Nota:** Não é obrigatório segui-lo.
+!!! warning
+    Não é obrigatório seguir a filosofia Diátaxis. Ela serve apenas como guia.
 
 As documentações acima são pensadas para o leitor usuário da solução.
 

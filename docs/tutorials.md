@@ -1,7 +1,7 @@
 This part of the project documentation focuses on a **learning-oriented** approach.
 You'll learn how to get started with the code in this project.
 
-> **Note:** Expand this section by considering the following points:
+Expand this section by considering the following points:
 
 - Help newcomers with getting started
 - Teach readers about your library by making them write code
@@ -11,4 +11,5 @@ You'll learn how to get started with the code in this project.
 - Provide the minimum necessary explanation
 - Avoid any distractions
 
-> **Nota:** Faça ao menos 1 tutorial com jupyter notebook.
+!!! warning
+    Faça ao menos 1 tutorial com jupyter notebook.

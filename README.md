@@ -12,8 +12,10 @@ que utilizou.
 Esta estrutura utiliza basicamente
 
 - Poetry como ferramenta de empacotamento e gerenciador de pacotes
-- Mkdocs para documentação, com template Material, e mkdocstrings para formatação do
-  docstring no [formato Google](https://google.github.io/styleguide/pyguide.html)
+- [Mkdocs](https://www.mkdocs.org/) para documentação, com template
+  [Material](https://squidfunk.github.io/mkdocs-material/setup/), e
+  [mkdocstrings](https://mkdocstrings.github.io/) para formatação do   docstring no
+  [formato Google](https://google.github.io/styleguide/pyguide.html)
 - Flake8 e Black são usados para estilo de código
 - Pre-commit é utilizado para verificações antes de `commit`
 
