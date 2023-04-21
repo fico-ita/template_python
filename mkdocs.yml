@@ -1,0 +1,25 @@
+site_name: FICO
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - tutorials.md
+  - How-to Guides: how-to-guides.md
+  - reference.md
+  - explanation.md
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            docstring_options:
+              ignore_init_summary: yes
+            merge_init_into_class: yes
+            separate_signature: yes
+            show_source: yes
+            show_root_full_path: no
+  - search

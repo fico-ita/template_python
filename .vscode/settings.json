@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        88
+    ],
+    "editor.wordWrapColumn": 88,
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true
+}
