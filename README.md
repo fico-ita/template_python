@@ -90,6 +90,9 @@ Um bom exemplo de Docstring no formato Google é o
 
 Veja as [seções docstrings na extensão Napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
 
+[Guia Khan](https://github.com/Khan/style-guides/blob/master/style/python.md#docstrings)
+sobre Docstring Google.
+
 ## Licença e imagens
 
 Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um
