@@ -49,6 +49,12 @@ exclua o `main.py`, que é apenas um script dummy.
 Note que não há testes nesta estrutura, o que é crucial, mas que não é exigido neste
 trabalho acadêmico.
 
+Esta estrutura exige python 3.11. Talvez tenha que o instalar, assim como outras
+ferramentas e pacotes. Adicionalmente, também já está incluso uma pequena configuração
+para o vscode.
+
+### Commits
+
 Antes de começar a fazer commits, inicialize a configuração do `pre-commit`.
 
 ```bash
@@ -56,9 +62,26 @@ Antes de começar a fazer commits, inicialize a configuração do `pre-commit`.
 pre-commit install
 ```
 
-Esta estrutura exige python 3.11. Talvez tenha que o instalar, assim como outras
-ferramentas e pacotes. Adicionalmente, também já está incluso uma pequena configuração
-para o vscode.
+Caso receba alguma mensagem de erro, pode executar apenas o id que resultou em erro.
+Por exemplo, se o id `fix-encoding-pragma` resultou em erro
+
+```bash
+# execute apenas esta verificação
+pre-commit run fix-encoding-pragma
+
+# analise as alterações feitas nos arquivos e mensagem de erro
+# faça stage das alternações
+git add file_name
+
+# verifique novamente
+pre-commit run fix-encoding-pragma
+
+# se tudo der certo, pode tentar o commit novamente
+```
+
+### Documentação
+
+Veja `docs` para servir a documentação.
 
 ## Licença e imagens
 
