@@ -10,6 +10,9 @@ The module contains the following functions:
 - `divide(a, b)` - Returns the quotient of two numbers.
 
 Examples:
+    Examples should be written in `doctest` format, and should illustrate how to use the
+    function.
+
     >>> from calculator import calculations
     >>> calculations.add(2, 4)
     6.0
@@ -23,6 +26,12 @@ Examples:
 
 def add(a: float | int, b: float | int) -> float:
     """The add function adds two numbers together.
+
+    Note:
+        Do not include the `self` parameter in the ``Args`` section.
+
+    Tip:
+        Just a tip!
 
     Args:
         a: First addend in the addition

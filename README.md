@@ -14,7 +14,7 @@ Esta estrutura utiliza basicamente
 - Poetry como ferramenta de empacotamento e gerenciador de pacotes
 - [Mkdocs](https://www.mkdocs.org/) para documentação, com template
   [Material](https://squidfunk.github.io/mkdocs-material/setup/), e
-  [mkdocstrings](https://mkdocstrings.github.io/) para formatação do   docstring no
+  [mkdocstrings](https://mkdocstrings.github.io/) para formatação do docstring no
   [formato Google](https://google.github.io/styleguide/pyguide.html)
 - Flake8 e Black são usados para estilo de código
 - Pre-commit é utilizado para verificações antes de `commit`
@@ -84,6 +84,11 @@ pre-commit run fix-encoding-pragma
 ### Documentação
 
 Veja `docs` para servir a documentação.
+
+Um bom exemplo de Docstring no formato Google é o
+[Napoleon's documentation](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+
+Veja as [seções docstrings na extensão Napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
 
 ## Licença e imagens
 
