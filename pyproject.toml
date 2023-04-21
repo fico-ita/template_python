@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "fico"
+version = "0.1.0"
+description = "Projeto teste do FICO"
+authors = ["curtis <curtis@ita.br>"]
+license = "ITA"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.1.6"
+mkdocstrings-python = "^0.9.0"
+pre-commit = "^3.2.2"
+black = "^23.3.0"
+ruff = "^0.0.262"
+nbqa = "^1.7.0"
+
+[tool.black]
+target-version = ["py311"]
+include = '\.pyi?$'
+exclude = '''
+    /(
+        \.eggs
+        | \.git
+        | \.hg
+        | \.mypy_cache
+        | \.nox
+        | \.tox
+        | \.venv
+        | _build
+        | buck-out
+        | build
+        | dist
+    )/
+'''
+
+[tool.ruff]
+# veja a lista em https://beta.ruff.rs/docs/rules/
+select = [
+    "E","F","W","C90","I","N","D","UP","YTT","B","A","COM","C4","DTZ","DJ","ISC","ICN",
+    "INP","PIE","PYI","Q","RSE","RET","SLF","SIM","TID","TCH","ARG","PTH","PD","PGH",
+    "PL","NPY","RUF"
+]
+exclude = [
+    "__pycache__",
+    "docs/source/conf.py",
+    "old",
+]
+target-version = "py311"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

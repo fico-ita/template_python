@@ -1,0 +1,61 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+#
+# Deve-se configurar os argumentos das funções, e.g. flake8, uma vez que pre-commit não
+# usa os arquivos de configurações
+
+default_language_version:
+  python: python3
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+        args: ['--unsafe']
+      - id: check-toml
+      - id: check-xml
+      - id: check-json
+      - id: pretty-format-json
+        args:
+          - "--autofix"
+          - "--indent=4"
+      - id: sort-simple-yaml
+      # remaining hooks in the order of https://pre-commit.com/hooks.html and https://github.com/pre-commit/pre-commit-hooks
+      - id: no-commit-to-branch
+      - id: check-added-large-files # prevents giant files from being committed
+      - id: check-ast # simply checks whether the files parse as valid python
+      - id: fix-byte-order-marker # removes UTF-8 byte order marker
+      - id: fix-encoding-pragma # Add # -*- coding: utf-8 -*- to the top of python files.
+        args: ['--remove']
+      - id: check-docstring-first # checks a common error of defining a docstring after code
+      - id: check-merge-conflict # checks for files that contain merge conflict strings
+      - id: debug-statements # checks for debugger imports and py37+ `breakpoint()` calls in python source
+      - id: detect-private-key # detects the presence of private keys
+      - id: end-of-file-fixer # ensures that a file is either empty, or ends with one newline
+      - id: mixed-line-ending # replaces or checks mixed line ending
+        args: ['--fix=lf']
+      - id: name-tests-test # verifies that test files are named correctly
+      - id: trailing-whitespace # trims trailing whitespace
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: "v0.0.262"
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.0
+    hooks:
+      - id: nbqa-black
+      # Desabilitado enquanto não corrigir https://github.com/nbQA-dev/nbQA/issues/811
+      #- id: nbqa-ruff
+      #  args: [--fix]
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.304
+    hooks:
+    - id: pyright
+
+exclude: "^$|^tests/"
