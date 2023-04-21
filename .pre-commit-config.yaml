@@ -33,6 +33,7 @@ repos:
       - id: detect-private-key # detects the presence of private keys
       - id: end-of-file-fixer # ensures that a file is either empty, or ends with one newline
       - id: mixed-line-ending # replaces or checks mixed line ending
+        args: ['--fix=lf']
       - id: name-tests-test # verifies that test files are named correctly
       - id: trailing-whitespace # trims trailing whitespace
   - repo: https://github.com/charliermarsh/ruff-pre-commit
