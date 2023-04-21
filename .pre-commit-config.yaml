@@ -45,5 +45,11 @@ repos:
     rev: 23.3.0
     hooks:
       - id: black
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.0
+    hooks:
+      - id: nbqa-black
+      - id: nbqa-ruff
+        args: [--fix]
 
 exclude: "^$|^tests/"
