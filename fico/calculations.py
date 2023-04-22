@@ -13,12 +13,12 @@ Examples:
     Examples should be written in `doctest` format, and should illustrate how to use the
     function.
 
-    >>> from calculator import calculations
+    >>> from fico import calculations
     >>> calculations.add(2, 4)
     6.0
     >>> calculations.multiply(2.0, 4.0)
     8.0
-    >>> from calculator.calculations import divide
+    >>> from fico.calculations import divide
     >>> divide(4.0, 2)
     2.0
 """
