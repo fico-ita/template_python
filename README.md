@@ -64,7 +64,8 @@ Antes de começar a fazer commits, inicialize a configuração do `pre-commit`.
 pre-commit install
 ```
 
-Caso receba alguma mensagem de erro, pode executar apenas o id que resultou em erro.
+Ao fazer commits, caso receba alguma mensagem de erro, pode-se executar apenas o id que
+resultou em erro.
 Por exemplo, se o id `fix-encoding-pragma` resultou em erro
 
 ```bash
