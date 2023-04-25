@@ -4,8 +4,14 @@ Documentação do pacote XXX no Github.
 Utilize o README.md mais como um ponteiro para a documentação oficial e instruções
 pertinentes.
 
-Adicione as seções *Como citar* e *Apoio*, citando explicitamente as empresas parceiras
-que utilizou.
+Não esqueça de preencher as seções *Como citar* e *Agradecimento*, citando
+explicitamente as empresas parceiras que apoiaram a solução.
+
+# TODO
+
+- Falta adicionar testes e log
+- Mudar pasta padrão de código para src
+- Testar empacotamento
 
 ## Estrutura
 
@@ -16,9 +22,11 @@ Esta estrutura utiliza basicamente
   [Material](https://squidfunk.github.io/mkdocs-material/setup/), e
   [mkdocstrings](https://mkdocstrings.github.io/) para formatação do docstring no
   [formato Google](https://google.github.io/styleguide/pyguide.html)
-- Flake8 e Black são usados para estilo de código
+- Ruff e Black são usados para estilo de código
 - Pre-commit é utilizado para verificações antes de `commit`
 
+Lembre-se que o pacote deve conter a parte reproduzível de seu projeto. O uso deve ser
+construído como um dos exemplos ou em outro repositório, que utiliza este pacote.
 ### Por onde começar
 
 O arquivo `pyproject.toml` é o arquivo principal de configuração do pacote. Altere a
@@ -40,6 +48,10 @@ poetry install
 # adicione uma biblioteca necessária
 poetry add nome_biblioteca
 # o pacote será adicionado em [tool.poetry.dependencies] de pyproject.toml
+
+# caso queira adicionar uma biblioteca necessária para desenvolvimento e não para uso
+# do pacote
+poetry add add --group dev nome_biblioteca
 
 # Dica: ative o ambiente virtual e depois chame o IDE (e.g. code .) para o encontrar
 ```
@@ -94,10 +106,29 @@ Veja as [seções docstrings na extensão Napoleon](https://www.sphinx-doc.org/e
 [Guia Khan](https://github.com/Khan/style-guides/blob/master/style/python.md#docstrings)
 sobre Docstring Google.
 
-## Licença e imagens
+## Git
+
+É aconselhável o uso do git utilizando o fluxo de trabalho conhecido como [Trunk Based
+Development (TBD)](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development),
+i.e., pequenos incrementos, ao invés de gitflow.
+
+## Licença
 
 Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um
-mínimo de qualidade.
+mínimo de qualidade. Inclua as licenças sobre os dados, quando houver, lembrando que
+os dados não devem ter controle de versão, ou seja, não os adicione em uma pasta do
+projeto. Informe seus links de acesso.
+
+## Agradecimento
 
 Escolha um bom nome de projeto e adicione as imagens dos apoiadores para deixar sua
 documentação com uma imagem mais profissional.
+
+## Como citar
+
+Copie aqui a forma de citação do software em formato de desejar e inclua o arquivo
+[CITATION.cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) no projeto.
+
+Caso tenha, adicione também a citação do paper conceitual sobre a solução.
+
+Inclua também sua referência ao FICO.

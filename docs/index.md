@@ -27,7 +27,7 @@ Para a organização da documentação de usuário, baseie-se na proposta de
 1. Explanation
 
 !!! warning
-    Não é obrigatório seguir a filosofia Diátaxis. Ela serve apenas como guia.
+    Não é obrigatório seguir Diátaxis. Ela serve apenas como guia.
 
 As documentações acima são pensadas para o leitor usuário da solução.
 
@@ -52,11 +52,14 @@ objetivos.
 
 Adicione aqui o pdf do artigo.
 
+# Licença
+
+Similar ao README.md
+
 ## Agradecimento
 
-Agradecer às empresas que cederam dados ou ferramentas para a solução.
+Similar ao README.md
 
 ## Como citar
 
-Adicione aqui a forma de citar seu trabalho e (novamente) as empresas apoiadoras.
-Inclua também sua referência ao FICO.
+Similar ao README.md
