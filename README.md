@@ -7,6 +7,12 @@ pertinentes.
 Adicione as seções *Como citar* e *Apoio*, citando explicitamente as empresas parceiras
 que utilizou.
 
+# TODO
+
+- gitflow
+- testes
+- deixa src como padrão para o código fonte
+
 ## Estrutura
 
 Esta estrutura utiliza basicamente
@@ -16,7 +22,7 @@ Esta estrutura utiliza basicamente
   [Material](https://squidfunk.github.io/mkdocs-material/setup/), e
   [mkdocstrings](https://mkdocstrings.github.io/) para formatação do docstring no
   [formato Google](https://google.github.io/styleguide/pyguide.html)
-- Flake8 e Black são usados para estilo de código
+- Ruff e Black são usados para estilo de código
 - Pre-commit é utilizado para verificações antes de `commit`
 
 ### Por onde começar
