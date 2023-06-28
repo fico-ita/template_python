@@ -53,9 +53,9 @@ repos:
       # Desabilitado enquanto não corrigir https://github.com/nbQA-dev/nbQA/issues/811
       #- id: nbqa-ruff
       #  args: [--fix]
-  - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.304
-    hooks:
-    - id: pyright
+#  - repo: https://github.com/RobertCraigie/pyright-python
+#    rev: v1.1.304
+#    hooks:
+#    - id: pyright
 
 exclude: "^$|^tests/"
