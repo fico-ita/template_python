@@ -1,9 +1,6 @@
 """Este módulo contém funções e bibliotecas relacionadas ao pipeline de captura,
 pré-processamento e indexação de relatórios.
-"""
-root = os.path.dirname(
-    "C:\\Users\\thgcn\\OneDrive\\Academico\\Mestrado - NLP - Finance\\datasets\\",
-)
+"""  # noqa: D205
 
 import io
 import json
@@ -13,9 +10,11 @@ import subprocess
 import zipfile
 from pathlib import Path
 
+import PyPDF2
 import requests
 import spacy
 import torch
+import torch.nn.functional as fun
 import unidecode
 from sklearn.metrics.pairwise import cosine_similarity
 from transformers import (
@@ -48,16 +47,15 @@ def verificar_diretorio():
         '/caminho/do/diretorio'
 
     """
-    root = input("Digite o caminho do diretório: ")
+    root = Path(input("Digite o caminho do diretório: "))
     try:
-        if os.path.isdir(root):
-            print("Diretório raiz para armazenamento dos documentos: " + root)
+        if root.is_dir():
+            print("Diretório raiz para armazenamento dos documentos: " + str(root))
             return root
-        else:
-            print("O diretório não existe ou não é válido.")
     except FileNotFoundError:
         print(
-            "O diretório inserido não existe ou não é válido. Certifique-se que o nome está correto",
+            "O diretório inserido não existe ou não é válido. \
+            Certifique-se que o nome está correto",
         )
 
 
@@ -74,10 +72,8 @@ def busca_ipe(ano):
         '/caminho/do/diretorio'
 
     """
-    url = (
-        "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/ipe_cia_aberta_%d.zip"
-        % ano
-    )
+    url = "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/"
+    url += "ipe_cia_aberta_%d.zip" % ano
     file = "ipe_cia_aberta_%d.zip" % ano
     r = requests.get(url)
     zf = zipfile.ZipFile(io.BytesIO(r.content))
@@ -86,7 +82,6 @@ def busca_ipe(ano):
     lines = zf.readlines()
     lines = [i.strip().decode("ISO-8859-1") for i in lines]
     lines = [i.split(";") for i in lines]
-    len(lines)
     return lines
 
 
@@ -125,7 +120,7 @@ def baixar_arquivo(url, endereco):
     """
     resposta = requests.get(url, allow_redirects=True, verify=False, stream=True)
     if resposta.status_code == requests.codes.OK:
-        with open(endereco, "wb") as novo_arquivo:
+        with endereco.open("wb") as novo_arquivo:
             novo_arquivo.write(resposta.content)
         print(f"Download finalizado. Arquivo salvo em: {endereco}")
     else:
@@ -133,7 +128,7 @@ def baixar_arquivo(url, endereco):
 
 
 def transform_string(text):
-    """Transforma uma string removendo acentos, substituindo espaços por underscores e convertendo para letras minúsculas.
+    """Remove acentos, substitui espaços por underline, converte para letras minúsculas.
 
     Args:
         text (str): A string a ser transformada.
@@ -153,18 +148,19 @@ def transform_string(text):
     return text
 
 
-def download_def(empresa, year):
-    """Realiza o download de arquivos específicos com base na empresa e no ano fornecidos.
+def download_def(empresa, year, root):  # noqa: C901, PLR0915
+    """Realiza download de arquivos específicos com base na empresa e no ano fornecidos.
 
     Args:
-        empresa (str): O nome da empresa para a qual deseja-se fazer o download dos arquivos.
+        empresa (str): Nome da empresa para qual deseja fazer o download dos arquivos.
         year (int): O ano para o qual deseja-se fazer o download dos arquivos.
+        root(str):  Caminho onde serao armazenados os documentos
 
     Returns:
         list: Uma lista de dicionários contendo os metadados dos arquivos baixados.
 
     Raises:
-        ValueError: Se houver duplicidade de empresas encontradas nos dados econômico-financeiros.
+        ValueError: Se houver duplicidade de empresas encontradas.
 
     Example:
         >>> download_def("Empresa XYZ", 2023)
@@ -177,62 +173,54 @@ def download_def(empresa, year):
     """
     lines = busca_ipe(year)
     defi = search(lines, "Dados Econômico-Financeiros")
-    year = year
     data = []
+    empresa_name = ""
+    num_cvm = ""
     for a in range(len(defi)):
-        count = 0
         if empresa.upper() in defi[a][1]:
-            count += 1
-            if count > 1:
-                raise ValueError("Duplicidade encontrada.")
-            else:
-                empresa_name = defi[a][1]
-                num_cvm = defi[a][2]
-    print("Empresa encontrada: " + empresa_name + " | codigo cvm: " + num_cvm)
-    print("Ano: " + str(year))
-    for a in range(len(defi)):
-        if defi[a][2] in num_cvm:
-            # sufix = re.sub(u'[^a-zA-Z0-9]', '_', defi[a][2] + "_" + defi[a][1])
+            empresa_name = defi[a][1]
+            num_cvm = defi[a][2]
+            print("Empresa encontrada: " + empresa_name + " | codigo cvm: " + num_cvm)
+            print("Ano: " + str(year))
             sufix = transform_string(defi[a][2] + "_" + defi[a][1])
-            company = os.path.join(root, sufix)
-            # category = re.sub(u'[^a-zA-Z0-9çãàáêéíõóú]', '_', defi[a][5])
+            company = root / sufix
             category = transform_string(defi[a][5])
             print("nome do arquivo: " + sufix)
-            print("caminho dos arquivos: " + company)
-            if not Path(root, sufix).is_dir():
+            print("caminho dos arquivos: " + str(company))
+            if not company.is_dir():
                 print("diretorio não existe e será criado")
-                os.makedirs(os.path.join(root, sufix))
-            if not Path(company, str(year)).is_dir():
+                company.mkdir(parents=True)
+            diryear = company / str(year)
+            if not diryear.is_dir():
                 print("diretorio não existe e será criado")
-                os.makedirs(os.path.join(company, str(year)))
-            diryear = os.path.join(company, str(year))
-            if not Path(diryear, category).is_dir():
+                diryear.mkdir(parents=True)
+            dircategory = diryear / category
+            if not dircategory.is_dir():
                 print("diretorio não existe e será criado")
-                os.makedirs(os.path.join(diryear, category))
-            dircategory = os.path.join(diryear, category)
+                dircategory.mkdir(parents=True)
             url = defi[a][12]
-            nome = transform_string(
-                defi[a][2]
+            nome = (
+                transform_string(defi[a][2])
                 + "_"
                 + defi[a][1]
                 + "_"
                 + defi[a][7][1:50]
                 + "_"
-                + defi[a][8],
+                + defi[a][8]
             )[1:100]
-            baixar_arquivo(url, os.path.join(dircategory, "%s.pdf" % nome))
+
+            baixar_arquivo(url, dircategory / f"{nome}.pdf")
+
             title = transform_string(defi[a][6][0:50])
             if not title:
                 if not defi[a][7]:
                     title = defi[a][7]
+                elif not defi[a][5]:
+                    title = defi[a][5]
+                elif not defi[a][4]:
+                    title = defi[a][4]
                 else:
-                    if not defi[a][5]:
-                        title = defi[a][5]
-                    else:
-                        if not defi[a][4]:
-                            title = defi[a][4]
-                        else:
-                            title = defi[a][1]
+                    title = defi[a][1]
             company_name = transform_string(defi[a][1])
             cod_cvm = defi[a][2]
             date = defi[a][3]
@@ -240,8 +228,9 @@ def download_def(empresa, year):
             if not content:
                 content = defi[a][6]
             keyword = defi[a][4]
-            size = os.path.getsize(os.path.join(dircategory, "%s.pdf" % nome))
-            file = os.path.join(dircategory, "%s.pdf" % nome)
+            file_path = dircategory / f"{nome}.pdf"
+            size = file_path.stat().st_size
+            file = str(file_path)
             data.append(
                 {
                     "name": title,
@@ -276,7 +265,7 @@ def convert_pdf(doc):
         # Output: Text extracted from the PDF file.
 
     """
-    with open(doc, "rb") as f:
+    with Path(doc).open("rb") as f:
         # Use a biblioteca PyPDF2 para ler o arquivo
         reader = PyPDF2.PdfReader(f)
         # Obtenha o número de páginas no arquivo
@@ -327,7 +316,8 @@ def remover_stopwords(tokens):
 
 
 def normalize_text(text):
-    """Normaliza um texto, convertendo-o para minúsculas e removendo caracteres especiais e acentuação.
+    """Normaliza o texto, convertendo-o para minúsculas e removendo caracteres especiais
+    e acentuação.
 
     Args:
         text (str): O texto a ser normalizado.
@@ -341,7 +331,7 @@ def normalize_text(text):
         print(normalized_text)
         # Output: hello world this is an example text
 
-    """
+    """  # noqa: D205
     # Converte o texto para minúsculas
     normalized_text = text.lower()
     # Remove caracteres especiais e acentuação
@@ -363,12 +353,12 @@ def tokengen(text):
         text = "Hello, World! This is an example text."
         tokens = tokengen(text)
         print(tokens)
-        # Output: ['[CLS]', 'hello', ',', 'world', '!', 'this', 'is', 'an', 'example', 'text', '.', '[SEP]']
+        # Output: ['[CLS]', 'hello', ',', 'world', '!', 'this', 'is', 'an', 'example',
+        # 'text', '.', '[SEP]']
 
     """
     tokens = tokenizer.encode(text, add_special_tokens=True)
-    token_list = tokenizer.convert_ids_to_tokens(tokens)
-    return token_list
+    return tokenizer.convert_ids_to_tokens(tokens)
 
 
 def vector_one(text):
@@ -393,13 +383,11 @@ def vector_one(text):
 
     max_length = 4096
     vectors = []
-
     # Divide the tokenized text into parts
     input_parts = [
         input_ids[:, i : i + max_length]
         for i in range(0, input_ids.shape[1], max_length)
     ]
-
     # Process each part of the tokenized text
     for part in input_parts:
         # Generate the embeddings vectors
@@ -414,8 +402,7 @@ def vector_one(text):
         vectors.append(average_vector)
 
     # Concatenate the generated vectors
-    text_vector = torch.cat(vectors, dim=1)
-    return text_vector
+    return torch.cat(vectors, dim=1)
 
 
 def similarity_vector(a, b):
@@ -444,35 +431,36 @@ def similarity_vector(a, b):
         return similarity_score.item()
     if size_a > size_b:
         diff = size_a - size_b
-        padded = F.pad(b, pad=(0, diff), mode="constant", value=0)
+        padded = fun.pad(b, pad=(0, diff), mode="constant", value=0)
         similarity_score = cosine_similarity(a.float(), padded.float())
         return similarity_score.item()
     if size_a < size_b:
         diff = size_b - size_a
-        padded = F.pad(a, pad=(0, diff), mode="constant", value=0)
+        padded = fun.pad(a, pad=(0, diff), mode="constant", value=0)
         similarity_score = cosine_similarity(b.float(), padded.float())
         return similarity_score.item()
     return None
 
 
 def question(text, question):
-    """Calcula a similaridade entre dois vetores.
+    """Calcula a resposta para uma pergunta com base em um texto usando
+    um modelo de similaridade.
 
     Args:
-        a (torch.Tensor): O primeiro vetor.
-        b (torch.Tensor): O segundo vetor.
+        text (str): O texto em que a pergunta será feita.
+        question (str): A pergunta a ser respondida.
 
     Returns:
-        float: O valor da similaridade entre os vetores.
+        str: A resposta para a pergunta.
 
     Example:
-        vector1 = torch.tensor([0.1, 0.2, 0.3])
-        vector2 = torch.tensor([0.4, 0.5, 0.6])
-        similarity = similarity_vector(vector1, vector2)
-        print(similarity)
-        # Output: Similarity score between the vectors.
+        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        question = "Qual é o significado de Lorem ipsum?"
+        answer = question(text, question)
+        print(answer)
+        # Output: Resposta para a pergunta..
 
-    """
+    """  # noqa: D205
     question = question
     max_answer_length = 512
     max_length = 512
@@ -495,7 +483,7 @@ def question(text, question):
         attention_mask = encoding["attention_mask"]
         # Obtém as respostas do modelo pré-treinado
         with torch.no_grad():
-            outputs = model_forquestion(
+            outputs = model_for_question(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
             )
@@ -532,7 +520,8 @@ def summarization(text):
         str: O resumo gerado do texto.
 
     Example:
-        text = "This is a sample text. It contains multiple sentences. The goal is to generate a summary."
+        text = "This is a sample text. It contains multiple sentences.
+        The goal is to generate a summary."
         summary = summarization(text)
         print(summary)
         # Output: A summary of the text.
@@ -546,15 +535,15 @@ def summarization(text):
         length = len(part)
         m_length = int(length * 0.4)
         # Tokenizar a parte do texto
-        inputs = tokenizersum.encode("summarize: " + part, return_tensors="pt")
+        inputs = tokenizer_sum.encode("summarize: " + part, return_tensors="pt")
         # Gerar o resumo da parte do texto usando o modelo T5
-        outputs = modelsum.generate(
+        outputs = model_sum.generate(
             inputs,
             max_length=m_length,
             num_beams=4,
             early_stopping=True,
         )
-        summary = tokenizersum.decode(outputs[0], skip_special_tokens=True)
+        summary = tokenizer_sum.decode(outputs[0], skip_special_tokens=True)
         # Adicionar o resumo à lista de sumários
         summaries.append(summary)
 
@@ -568,6 +557,25 @@ def summarization(text):
     ]
 
     return ". ".join(top_sentences)
+
+
+def start_solr_service(solr_bin_path):
+    """Inicia o serviço do Solr.
+
+    Args:
+        solr_bin_path (str): O caminho para o diretório bin do Solr.
+
+    Returns:
+        int: O código de retorno da execução do comando.
+    """
+    # Comando para iniciar o serviço do Solr
+    command = f"{solr_bin_path}solr start -port 8983"
+
+    # Executa o comando no terminal
+    result = subprocess.run(command, shell=True)
+
+    # Retorna o código de retorno da execução do comando
+    return result.returncode
 
 
 def check_collection_exists(collection_name):
@@ -587,9 +595,11 @@ def check_collection_exists(collection_name):
     url = f"http://localhost:8983/solr/{collection_name}/admin/ping"
 
     response = requests.get(url)
-    if response.status_code == 200:
+    status_ok = 200
+    status_not_found = 404
+    if response.status_code == status_ok:
         return True
-    elif response.status_code == 404:
+    elif response.status_code == status_not_found:  # noqa: RET505
         return False
     else:
         print(
@@ -611,12 +621,10 @@ def create_solr_collection(collection_name):
 
     """
     # Caminho para o diretório bin do Solr
-    solr_bin_path = (
-        "C:\\Users\\thgcn\\OneDrive\\Academico\\PO-245\\Projeto\\solr-9.2.1\\bin\\"
-    )
+    solr = "C:\\Users\\thgcn\\OneDrive\\Academico\\PO-245\\Projeto\\solr-9.2.1\\bin\\"
 
     # Mude para o diretório bin do Solr
-    os.chdir(solr_bin_path)
+    os.chdir(solr)
 
     # Comando para criar a coleção no modo standalone
     create_collection_command = f"solr.cmd create -c {collection_name} -s 2 -rf 2"
@@ -651,8 +659,9 @@ def create_solr_collection(collection_name):
 
     # Enviar solicitação POST para atualizar o esquema no Solr
     response = requests.post(url, json=data, headers=headers)
+    status_ok = 200
 
-    if response.status_code == 200:
+    if response.status_code == status_ok:
         print("Esquema atualizado com sucesso.")
     else:
         print("Falha ao atualizar o esquema. Status:", response.status_code)
@@ -662,7 +671,8 @@ def update_schema(data, collection_name):
     """Atualiza o esquema da coleção Solr com os campos fornecidos.
 
     Args:
-        data (dict): Dicionário contendo os campos e configurações a serem adicionados ao esquema.
+        data (dict): Dicionário contendo os campos e configurações
+        a serem adicionados ao esquema.
         collection_name (str): O nome da coleção a ser atualizada.
 
     Example:
@@ -680,9 +690,7 @@ def update_schema(data, collection_name):
     url = f"http://localhost:8983/solr/{collection_name}/schema"
 
     # Cabeçalhos da solicitação POST
-    headers = {
-        "Content-Type": "application/json",
-    }
+    headers = {"Content-Type": "application/json"}
 
     # Converter tensores em listas
     data = json.loads(json.dumps(data, default=lambda x: x.tolist()))
@@ -690,9 +698,9 @@ def update_schema(data, collection_name):
     # Enviar solicitação POST para atualizar o esquema no Solr
     response = requests.post(url, json=data, headers=headers)
 
-    upd = f"http://localhost:8983/solr/{core_name}/config"
-
-    if response.status_code == 200:
+    upd = f"http://localhost:8983/solr/{collection_name}/config"
+    status_ok = 200
+    if response.status_code == status_ok:
         print("1/2 Esquema atualizado com sucesso.")
         data_up = {
             "set-property": {
@@ -700,7 +708,7 @@ def update_schema(data, collection_name):
             },
         }
         response = requests.post(upd, headers=headers, json=data_up)
-        if response.status_code == 200:
+        if response.status_code == status_ok:
             print("2/2 Commit realizado com sucesso.")
         else:
             print("Falha no commit. Status:", response.status_code)
@@ -726,6 +734,9 @@ def add_document_to_solr(collection_name, document):
         add_document_to_solr("my_collection", document)
 
     """
+    # Converter o caminho do arquivo em string
+    document = {k: str(v) if isinstance(v, Path) else v for k, v in document.items()}
+
     # URL da API do Solr para adicionar documentos
     solr_url = f"http://localhost:8983/solr/{collection_name}/update?commit=true"
 
@@ -733,7 +744,8 @@ def add_document_to_solr(collection_name, document):
     response = requests.post(solr_url, json=[document])
 
     # Verifica o status da resposta
-    if response.status_code == 200:
+    status_ok = 200
+    if response.status_code == status_ok:
         print("Documento adicionado com sucesso!")
     else:
         print("Erro ao adicionar o documento:", response.text)
@@ -741,7 +753,8 @@ def add_document_to_solr(collection_name, document):
 
 
 def pipeline(empresa, ano):
-    """Executa o pipeline de captura, preprocessamento e indexação de documentos econômico-financeiros.
+    """Executa o pipeline de captura,
+    preprocessamento e indexação de documentos econômico-financeiros.
 
     Args:
         empresa (str): O nome da empresa para o qual deseja-se executar o pipeline.
@@ -760,17 +773,19 @@ def pipeline(empresa, ano):
         diretorio não existe e será criado
         diretorio não existe e será criado
         diretorio não existe e será criado
-        Download finalizado. Arquivo salvo em: /caminho/do/diretorio/123456_Empresa_XYZ/2023/Economic_Financial_Data/123456_Empresa_XYZ.pdf
+        Download finalizado. Arquivo salvo em:
+        /caminho/do/dir/123_Empresa_XYZ/2023/Economic_Fin_Data/123456_Empresa_XYZ.pdf
         geração de token e tensor.....
         Documento adicionado com sucesso!
         ...
         1/2 Esquema atualizado com sucesso.
         2/2 Commit realizado com sucesso.
-    """
+    """  # noqa: D205
     # Faz o download do documento
-    verificar_diretorio()
+    root = verificar_diretorio()
+    collection_name = "dados_eco"
     print("Inicio do pipeline de captura *********")
-    doc = download_def(empresa, ano)
+    doc = download_def(empresa, ano, root)
     print("Inicio do pipeline de preprocessamento e indexacao *********")
     for item in doc:
         # Define o tipo do item como "document"
@@ -778,30 +793,32 @@ def pipeline(empresa, ano):
         # Define o nome da coleção como "dados_eco"
         collection_name = "dados_eco"
         # Obtém o diretório do arquivo
-        diretorio = os.path.dirname(item["file"])
+        diretorio = Path(item["file"]).parent
         # Obtém o nome do arquivo sem a extensão
-        tokens_tensor, ext = os.path.splitext(os.path.basename(item["file"]))
+        file_path = Path(item["file"])
+        tokens_tensor = file_path.stem, file_path.suffix
         # Define o caminho do arquivo de tokens e tensor
-        dataprep = os.path.join(diretorio, f"{tokens_tensor}_TOKENS_TENSOR.txt")
+        dataprep = Path(diretorio) / f"{tokens_tensor}_TOKENS_TENSOR.json"
         # Cria o output data com os tokens e tensor
-        print("geracao de token e tensor.....")
         text = convert_pdf(item["file"])
         token = tokengen(text)
         vector = vector_one(text).tolist()
-
         output_data = [
             {
                 "tokens": token,
                 "tensor": vector,
             },
         ]
+
         # Salva o output data em um arquivo JSON
-        with open(dataprep, "w") as file:
+        with dataprep.open("w") as file:
             json.dump(output_data, file)
+
         # Atualiza os campos tokens e tensor do item com o caminho do arquivo
         item["tokens"] = dataprep
         item["tensor"] = dataprep
-        # Verifica se algum campo está ausente e define como "Descrição ausente" se necessário
+        # Verifica se algum campo está ausente e define como
+        # "Descrição ausente" se necessário
         fields = [
             "name",
             "type",
@@ -820,7 +837,4 @@ def pipeline(empresa, ano):
             if not item[field]:
                 item[field] = "Descrição ausente"
         # Adiciona o documento ao Solr
-        collection_name = "dados_eco"
         add_document_to_solr(collection_name, item)
-    # Atualiza o schema fora do loop
-    return update_schema(doc, collection_name)
