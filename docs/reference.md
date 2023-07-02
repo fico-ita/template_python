@@ -6,4 +6,4 @@ Use it as a reference for the technical implementation of the `calculator` proje
 ::: fico.calculations
 
 ::: fico.cpi
-::: fico.cpi_auxiliares
+::: fico.cpi_helpers

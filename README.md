@@ -1,17 +1,7 @@
-# Estrutura FICO
+# FICO - Pipeline (CPI)
 
-Documentação do pacote XXX no Github.
-Utilize o README.md mais como um ponteiro para a documentação oficial e instruções
-pertinentes.
+Documentação do pacote Pipeline captura, pré-processamento e indexação de metadados (CPI)  no Github.
 
-Não esqueça de preencher as seções *Como citar* e *Agradecimento*, citando
-explicitamente as empresas parceiras que apoiaram a solução.
-
-# TODO
-
-- Falta adicionar testes e log
-- Mudar pasta padrão de código para src
-- Testar empacotamento
 
 ## Estrutura
 
@@ -27,6 +17,7 @@ Esta estrutura utiliza basicamente
 
 Lembre-se que o pacote deve conter a parte reproduzível de seu projeto. O uso deve ser
 construído como um dos exemplos ou em outro repositório, que utiliza este pacote.
+
 ### Por onde começar
 
 O arquivo `pyproject.toml` é o arquivo principal de configuração do pacote. Altere a

@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Pipeline de disponibilização dos Relatórios Obrigatórios
+  no mercado de Capitais Brasileiro
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Thiago
+    family-names: C. N da Silva
+    email: thiagotcns@ita.br)
+repository-code: 'https://github.com/fico-ita/po_245_2023_T4.git'
+keywords:
+  - pipeline cvm
+  - solr
+  - longformer
+  - finance
