@@ -1,6 +1,7 @@
 # FICO - Pipeline (CPI)
 
 Documentação do pacote Pipeline captura, pré-processamento e indexação de metadados (CPI)  no Github.
+Este projeto faz parte do grupo de interesse em Finanças Computacionais e investimentos Sistemáticos multidisciplinr atuando dentro do Instituto Tecnológico de Aeronáutica (FICO-ITA).
 
 
 ## Estrutura
@@ -89,37 +90,51 @@ pre-commit run fix-encoding-pragma
 
 Veja `docs` para servir a documentação.
 
-Um bom exemplo de Docstring no formato Google é o
-[Napoleon's documentation](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+Esta documentação esta disponível em:
 
-Veja as [seções docstrings na extensão Napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
+## License
 
-[Guia Khan](https://github.com/Khan/style-guides/blob/master/style/python.md#docstrings)
-sobre Docstring Google.
-
-## Git
-
-É aconselhável o uso do git utilizando o fluxo de trabalho conhecido como [Trunk Based
-Development (TBD)](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development),
-i.e., pequenos incrementos, ao invés de gitflow.
-
-## Licença
-
-Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um
-mínimo de qualidade. Inclua as licenças sobre os dados, quando houver, lembrando que
-os dados não devem ter controle de versão, ou seja, não os adicione em uma pasta do
-projeto. Informe seus links de acesso.
+[Apache License 2.0](LICENSE)
 
 ## Agradecimento
 
-Escolha um bom nome de projeto e adicione as imagens dos apoiadores para deixar sua
-documentação com uma imagem mais profissional.
+<div style="display: flex; justify-content: center;">
+  <div style="flex: 1; text-align: center;">
+    <figure>
+      <img src=".src/Elton_Sbruzzi.png" alt="Elton Sbruzzi" width="150" height="150" />
+      <figcaption>Elton Sbruzzi</figcaption>
+    </figure>.src/
+  </div>
 
-## Como citar
+  <div style="flex: 1; text-align: center;">
+    <figure>
+      <img src=".src/Michel_Leles.png" alt="Michel Leles" width="150" height="150" />
+      <figcaption>Michel Leles</figcaption>
+    </figure>
+  </div>
 
-Copie aqui a forma de citação do software em formato de desejar e inclua o arquivo
-[CITATION.cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) no projeto.
+  <div style="flex: 1; text-align: center;">
+    <figure>
+      <img src=".src/vitor_curtis.png" alt="Vitor Curtis" width="150" height="150" />
+      <figcaption>Vitor Curtis</figcaption>
+    </figure>
+  </div>
+</div>
 
-Caso tenha, adicione também a citação do paper conceitual sobre a solução.
+## Citação
 
-Inclua também sua referência ao FICO.
+### APA
+```text
+C. N da Silva, T. Pipeline de disponibilização dos Relatórios Obrigatórios no mercado de Capitais Brasileiro [Computer software]. https://github.com/fico-ita/po_245_2023_T4.git
+```
+
+### BibTeX
+```bibtex
+@software{C_N_da_Silva_Pipeline_de_disponibilizacao,
+author = {C. N da Silva, Thiago},
+title = {{Pipeline de disponibilização dos Relatórios Obrigatórios no mercado de Capitais Brasileiro}},
+url = {https://github.com/fico-ita/po_245_2023_T4.git}
+}
+```
+
+
