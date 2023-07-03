@@ -6,7 +6,11 @@ Este projeto faz parte do grupo de interesse em Finanças Computacionais e inves
 
 ## Documentação
 
-[Clique aqui](docs/index.md) para acessar a documentação
+- [Clique aqui](docs/index.md) para acessar a documentação
+
+* [Clique aqui](docs/Pipeline_de_disponibiliza%C3%A7%C3%A3o_de_relat%C3%B3rios_obrigat%C3%B3rios_no_mercado_de_capitais_brasileiro.pdf) para acessar o artigo
+  
+* [Clique aqui](docs/tutorials/tutorial_cpi.ipynb) para acessar o Jupyter Notebook com o passo a passo do pipeline CPI
 
 ## License
 
