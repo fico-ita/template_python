@@ -1,7 +1,7 @@
 # FICO - Pipeline (CPI)
 
 Documentação do pacote Pipeline captura, pré-processamento e indexação de metadados (CPI)  no Github.
-Este projeto faz parte do grupo de interesse em Finanças Computacionais e investimentos Sistemáticos multidisciplinr atuando dentro do Instituto Tecnológico de Aeronáutica (FICO-ITA).
+Este projeto faz parte do grupo de interesse em Finanças Computacionais e investimentos Sistemáticos multidisciplinar atuando dentro do Instituto Tecnológico de Aeronáutica (FICO-ITA).
 
 
 ## Documentação
