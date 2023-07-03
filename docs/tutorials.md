@@ -1,5 +1,7 @@
 
-# Pipeline (CPI)
+# Tutorial
+
+## Pipeline (CPI)
 
 Neste tutorial apresentaremos o Pipeline de Captura, Pré-processamento e Indexação de metadados (CPI), estrutura abrangente para a disponibilização de relatórios financeiros fornecidos pelas empresas à Comissão de Valores Mobiliários (CVM), com o objetivo de facilitar a análise e o acesso a informações financeiras relevantes. 
 A estrutura proposta é composta por várias etapas interconectadas, que abrangem desde a coleta inicial dos dados financeiros (por meio de um pipeline de captura) até a sua disponibilização final para os usuários, utilizando a indexação de metadados por meio do Apache
@@ -38,6 +40,7 @@ Passo 1: Instale o Poetry
 Certifique-se de ter o Poetry instalado em seu sistema. Você pode seguir as instruções de instalação no site oficial do Poetry: 
 https://python-poetry.org/docs/#installation
 ```
+
 Passo 2: Clone o repositório do Github
 
 ```bash
@@ -58,6 +61,16 @@ Passo 5: Ative o ambiente virtual
 ```bash
 $ poetry shell
 ```
-## Utilização do componente CPI
+## Utilização do módulo CPI
 
+O módulo CPI tem todas as funções utilizadas no processo de caputra, pré-processamento e indexação de medatados, estas funções são orquestradas pela função principal chamada ```pipeline```
 
+[Utilização do módulo CPI - Jupyter Notbook](tutorials/tutorial_cpi.ipynb)
+
+## Utilização do módulo CPI Helpers
+
+O módulo CPI_Helpers contém as funções que são chamadas para atender uma necessidade pontual, por exemplo, a primeira vez que o pipeline é executado é necessário criar uma coleção no Apache Solr. 
+Diferente do módulo CPI, o CPI Helpers tem funções indepentendes, que não estão atreladas ao pipeline.
+Na seção de "referências" você pode conferir todas as funções com as respectivas chamadas e exemplos.
+
+[Funções do módulo CPI Helpers - Referencia](reference.md)

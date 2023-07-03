@@ -428,8 +428,7 @@ def add_document_to_solr(collection_name, document):
         print("Erro ao adicionar o documento:", response.text)
         print(response.content.decode())
 
-
-def pipeline_cpi(empresa, ano):
+def pipeline(empresa, ano):
     """Executa o pipeline de captura,
     preprocessamento e indexação de documentos econômico-financeiros.
 

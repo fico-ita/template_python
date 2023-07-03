@@ -9,8 +9,7 @@ Este projeto faz parte do grupo de interesse em Finanças Computacionais e Inves
 Para a organização da documentação de usuário, baseie-se na proposta de
 [Diátaxis](https://diataxis.fr/), que consiste em 4 classes de documentos:
 
-1. Tutorials
-1. How-To guides
+1. Tutorial
 1. Reference
 1. Explanation
 
@@ -30,7 +29,7 @@ Nesta documentação o foco é a estrutura proposta para o pipeline e a organiza
   <figcaption>Pipeline de captura, pré-processamento e indexação de metadados</figcaption>
 </figure>
 
-#### Etapas
+Etapas
 
 * `1`  Conecta ao portal de dados abertos CVM
 * `2`  Faz o download da lsita de documentos, contendo nome da empresa, tipo de documento, link para download.
@@ -46,7 +45,7 @@ Nesta documentação o foco é a estrutura proposta para o pipeline e a organiza
 
 ## Artigo
 
-[Pipeline de disponibilização dos Relatórios Obrigatórios no mercado de Capitais Brasileiro](../src/Pipeline_de_disponibilização_de_relatórios_obrigatórios_no_mercado_de_capitais_brasileiro.pdf)
+[Pipeline de disponibilização dos Relatórios Obrigatórios no mercado de Capitais Brasileiro](Pipeline_de_disponibilização_de_relatórios_obrigatórios_no_mercado_de_capitais_brasileiro.pdf)
 
 ## Licença
 
