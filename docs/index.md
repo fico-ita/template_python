@@ -6,8 +6,7 @@ Este projeto faz parte do grupo de interesse em Finanças Computacionais e Inves
 
 ## Organização da documentação
 
-Para a organização da documentação de usuário, baseie-se na proposta de
-[Diátaxis](https://diataxis.fr/), que consiste em 4 classes de documentos:
+A organização desta documentação de usuário consiste nas classes de documentos:
 
 1. Tutorial
 1. Reference

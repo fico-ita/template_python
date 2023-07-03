@@ -17,21 +17,21 @@ Este projeto faz parte do grupo de interesse em Finanças Computacionais e inves
 <div style="display: flex; justify-content: center;">
   <div style="flex: 1; text-align: center;">
     <figure>
-      <img src=".src/Elton_Sbruzzi.png" alt="Elton Sbruzzi" width="150" height="150" />
+      <img src=".src/Elton_Sbruzzi.png" alt="Elton Sbruzzi" width="125" height="125" />
       <figcaption>Elton Sbruzzi</figcaption>
     </figure>
   </div>
 
   <div style="flex: 1; text-align: center;">
     <figure>
-      <img src=".src/Michel_Leles.png" alt="Michel Leles" width="150" height="150" />
+      <img src=".src/Michel_Leles.png" alt="Michel Leles" width="125" height="125" />
       <figcaption>Michel Leles</figcaption>
     </figure>
   </div>
 
   <div style="flex: 1; text-align: center;">
     <figure>
-      <img src=".src/vitor_curtis.png" alt="Vitor Curtis" width="150" height="150" />
+      <img src=".src/vitor_curtis.png" alt="Vitor Curtis" width="125" height="125" />
       <figcaption>Vitor Curtis</figcaption>
     </figure>
   </div>
