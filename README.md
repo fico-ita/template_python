@@ -19,10 +19,8 @@ Este projeto faz parte do grupo de interesse em Finanças Computacionais e inves
 ## Agradecimentos
 
 
- | ![Elton Sbruzzi](.src/Elton_Sbruzzi.png) | ![Michel Leles](.src/Michel_Leles.png) | ![Vitor Curtis](.src/vitor_curtis.png) |
- | :--------------------------------------: | :------------------------------------: | :------------------------------------: |
- |              Elton Sbruzzi               |              Michel Leles              |              Vitor Curtis              |
-
+| <img src=".src/Elton_Sbruzzi.png" alt="Elton Sbruzzi" width="125" height="125" /> Elton Sbruzzi | <img src=".src/Michel_Leles.png" alt="Michel Leles" width="125" height="125" /> Michel Leles | <img src=".src/vitor_curtis.png" alt="Vitor Curtis" width="125" height="125" /> Vitor Curtis |
+| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 
 
 
