@@ -41,7 +41,7 @@ tokenizer_sum = T5Tokenizer.from_pretrained("t5-base")
 slrb = Path("C:\\Users\\thgcn\\OneDrive\\Academico\\PO-245\\Projeto\\solr-9.2.1\\bin\\")
 
 
-def remover_stopwords(tokens):
+def remove_stopwords(tokens):
     """Remove as stopwords de uma lista de tokens.
 
     Args:
@@ -50,11 +50,11 @@ def remover_stopwords(tokens):
     Returns:
         list: A lista de tokens sem as stopwords.
 
-    Example:
-        token_list = ['This', 'is', 'a', 'sample', 'sentence']
-        tokens_without_stopwords = remover_stopwords(token_list)
-        print(tokens_without_stopwords)
-        # Output: ['This', 'sample', 'sentence']
+    Examples:
+        >>> token_list = ['This', 'is', 'a', 'sample', 'sentence']
+        >>> tokens_without_stopwords = remove_stopwords(token_list)
+        >>> print(tokens_without_stopwords)
+        ['This', 'sample', 'sentence']
 
     """
     # Carrega o modelo do SpaCy para o idioma português
@@ -81,11 +81,11 @@ def normalize_text(text):
     Returns:
         str: O texto normalizado.
 
-    Example:
-        text = "Hello, World! This is an example text."
-        normalized_text = normalize_text(text)
-        print(normalized_text)
-        # Output: hello world this is an example text
+    Examples:
+        >>> text = "Hello, World! This is an example text."
+        >>> normalized_text = normalize_text(text)
+        >>> print(normalized_text)
+        hello world this is an example text
 
     """  # noqa: D205
     # Converte o texto para minúsculas
@@ -106,12 +106,12 @@ def similarity_vector(a, b):
     Returns:
         float: O valor da similaridade entre os vetores.
 
-    Example:
-        vector1 = torch.tensor([0.1, 0.2, 0.3])
-        vector2 = torch.tensor([0.4, 0.5, 0.6])
-        similarity = similarity_vector(vector1, vector2)
-        print(similarity)
-        # Output: Similarity score between the vectors.
+    Examples:
+        >>> vector1 = torch.tensor([0.1, 0.2, 0.3])
+        >>> vector2 = torch.tensor([0.4, 0.5, 0.6])
+        >>> similarity = similarity_vector(vector1, vector2)
+        >>> print(similarity)
+        0.9746318454742432
 
     """
     size_a = a.size(0)
@@ -134,24 +134,28 @@ def similarity_vector(a, b):
 
 
 def question(text, question):
-    """Calcula a resposta para uma pergunta com base em um texto usando
-    um modelo de similaridade.
+    """Calcula a resposta para uma pergunta com base em um texto usando um modelo de
+    similaridade.
+
 
     Args:
-        text (str): O texto em que a pergunta será feita.
-        question (str): A pergunta a ser respondida.
+    text (str): O texto em que a pergunta será feita.
+    question (str): A pergunta a ser respondida.
 
     Returns:
-        str: A resposta para a pergunta.
+    str: A resposta para a pergunta.
 
-    Example:
-        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        question = "Qual é o significado de Lorem ipsum?"
-        answer = question(text, question)
-        print(answer)
-        # Output: Resposta para a pergunta..
-
-    """  # noqa: D205
+    Examples:
+        >>> text = "A inteligência artificial (IA) está se tornando cada vez mais
+        presente em nossas vidas. Ela é aplicada em diversos setores, como saúde,
+        finanças e transporte. A IA utiliza algoritmos e modelos de aprendizado de
+        máquina para analisar dados e tomar decisões automatizadas."
+        >>> question = "Quais são os setores em que a inteligência artificial é
+        aplicada?"
+        >>> answer = question(text, question)
+        >>> print(answer)
+        A IA é aplicada em diversos setores, como saúde, finanças e transporte.
+"""  # noqa: D207, D205
     question = question
     max_answer_length = 512
     max_length = 512
@@ -205,13 +209,21 @@ def summarization(text):
     Returns:
         str: O resumo gerado do texto.
 
-    Example:
-        text = "This is a sample text. It contains multiple sentences.
-        The goal is to generate a summary."
-        summary = summarization(text)
-        print(summary)
-        # Output: A summary of the text.
-
+    Examples:
+        >>> text = "A inteligência artificial é um campo da ciência da computação que se
+        dedica a criar máquinas capazes de simular a inteligência humana. Essas máquinas
+        podem realizar tarefas complexas, como reconhecimento de padrões, processamento 
+        de linguagem natural e tomada de decisões. A inteligência artificial tem sido 
+        aplicada em diversos setores, como saúde, transporte, finanças e entretenimento,
+        trazendo benefícios e transformando a maneira como vivemos e trabalhamos."
+        >>> summary = summarization(text)
+        >>> print(summary)
+        A inteligência artificial é um campo da ciência da computação que se dedica
+        a criar máquinas capazes de simular a inteligência humana. Essas máquinas
+        podem realizar tarefas complexas, como reconhecimento de padrões, processamento
+        de linguagem natural e tomada de decisões. A inteligência artificial tem sido
+        aplicada em diversos setores, como saúde, transporte, finanças e entretenimento,
+        trazendo benefícios e transformando a maneira como vivemos e trabalhamos.
     """
     num_sentences = 5
     # Tokenizar o texto em partes
@@ -248,8 +260,11 @@ def stop_solr_service():
     Returns:
         int: O código de retorno da execução do comando.
         str: A mensagem de erro, caso ocorra.
-    """
-    # Comando para desligar o serviço do Solr
+
+    Examples:
+        >>> stop_solr_service()
+       (0, 'Solr desligado com sucesso.')
+        """
     command = f"{slrb}\\solr stop -port 8983"
 
     try:
@@ -356,7 +371,7 @@ def update_schema(data, collection_name):
         a serem adicionados ao esquema.
         collection_name (str): O nome da coleção a ser atualizada.
 
-    Example:
+    Examples:
         data = {
             "add-field": [
                 {"name": "title", "type": "text_general", "multiValued": False},
@@ -364,7 +379,9 @@ def update_schema(data, collection_name):
                 {"name": "author", "type": "text_general", "multiValued": False}
             ]
         }
-        update_schema(data, "my_collection")
+        >>> update_schema(data, "my_collection")
+        1/2 Esquema atualizado com sucesso.
+        2/2 Commit realizado com sucesso.
 
     """
     # URL do endpoint Solr

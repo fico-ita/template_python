@@ -5,5 +5,8 @@
     ],
     "editor.wordWrapColumn": 88,
     "python.formatting.provider": "black",
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "python.analysis.extraPaths": [
+        "./fico"
+    ]
 }

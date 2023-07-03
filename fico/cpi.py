@@ -31,11 +31,11 @@ tokenizer_sum = T5Tokenizer.from_pretrained("t5-base")
 slrb = Path("C:\\Users\\thgcn\\OneDrive\\Academico\\PO-245\\Projeto\\solr-9.2.1\\bin\\")
 
 
-def verificar_diretorio():
+def check_directory():
     """Verifica se o diretório informado pelo usuário é válido.
 
     Examples:
-        >>> verificar_diretorio()
+        >>> check_directory()
         Digite o caminho do diretório: /caminho/do/diretorio
         Diretório raiz para armazenamento dos documentos:
         '/caminho/do/diretorio'
@@ -53,7 +53,7 @@ def verificar_diretorio():
         )
 
 
-def busca_ipe(ano):
+def search_ipe(ano):
     """Obtém os dados do IPE (Informações Periódicas) de uma determinada empresa
     para o ano especificado.
 
@@ -64,7 +64,7 @@ def busca_ipe(ano):
         list: Uma lista contendo as linhas dos dados do IPE da empresa.
 
     Examples:
-        >>> busca_ipe(2022)
+        >>> search_ipe(2022)
          ['Empresa A', '123456', '10.2', 'http:dados.cvm/ipe/123456'],
          ['Empresa B', '789012', '5.8', ''http:dados.cvm/ipe/789455']
 
@@ -100,7 +100,7 @@ def search(lista, valor):
     return [(lista[lista.index(x)]) for x in lista if valor in x]
 
 
-def baixar_arquivo(url, endereco):
+def download_file(url, endereco):
     """Faz o download de um arquivo a partir de uma URL e salva no caminho especificado.
 
     Args:
@@ -111,7 +111,7 @@ def baixar_arquivo(url, endereco):
         Exception: Se ocorrer um erro ao fazer o download do arquivo.
 
     Examples:
-        >>> baixar_arquivo('https://example.com/file.pdf', '/path/to/save/file.pdf')
+        >>> download_file('https://example.com/file.pdf', '/path/to/save/file.pdf')
         Download finalizado. Arquivo salvo em: /path/to/save/file.pdf
 
     """
@@ -168,7 +168,7 @@ def download_def(empresa, year, root):  # noqa: C901, PLR0915
         caminho dos arquivos: /caminho/do/arquivo/12345_empresa_xyz
 
     """
-    lines = busca_ipe(year)
+    lines = search_ipe(year)
     defi = search(lines, "Dados Econômico-Financeiros")
     data = []
     empresa_name = ""
@@ -206,7 +206,7 @@ def download_def(empresa, year, root):  # noqa: C901, PLR0915
                 + defi[a][8]
             )[1:100]
 
-            baixar_arquivo(url, dircategory / f"{nome}.pdf")
+            download_file(url, dircategory / f"{nome}.pdf")
 
             title = transform_string(defi[a][6][0:50])
             if not title:
@@ -428,7 +428,6 @@ def add_document_to_solr(collection_name, document):
         print("Erro ao adicionar o documento:", response.text)
         print(response.content.decode())
 
-
 def pipeline(empresa, ano):
     """Executa o pipeline de captura,
     preprocessamento e indexação de documentos econômico-financeiros.
@@ -456,7 +455,7 @@ def pipeline(empresa, ano):
         Documento adicionado com sucesso!
     """  # noqa: D205
     # Faz o download do documento
-    root = verificar_diretorio()
+    root = check_directory()
     collection_name = "dados_eco"
     print("Inicio do pipeline de captura *********")
     doc = download_def(empresa, ano, root)

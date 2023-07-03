@@ -1,9 +1,7 @@
-This part of the project documentation focuses on an **information-oriented** approach.
-Use it as a reference for the technical implementation of the `calculator` project code.
 
-## Calculations
-
-::: fico.calculations
+## Pipeline de Captura, processamento e Indexação de metadados (CPI)
 
 ::: fico.cpi
-::: fico.cpi_auxiliares
+
+## Funções auxiliares (CPI)
+::: fico.cpi_helpers
