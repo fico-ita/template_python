@@ -12,30 +12,15 @@ Este projeto faz parte do grupo de interesse em Finanças Computacionais e inves
 
 [Apache License 2.0](LICENSE)
 
-## Agradecimento
+## Agradecimentos
 
-<div style="display: flex; justify-content: center;">
-  <div style="flex: 1; text-align: center;">
-    <figure>
-      <img src=".src/Elton_Sbruzzi.png" alt="Elton Sbruzzi" width="125" height="125" />
-      <figcaption>Elton Sbruzzi</figcaption>
-    </figure>
-  </div>
 
-  <div style="flex: 1; text-align: center;">
-    <figure>
-      <img src=".src/Michel_Leles.png" alt="Michel Leles" width="125" height="125" />
-      <figcaption>Michel Leles</figcaption>
-    </figure>
-  </div>
+ | ![Elton Sbruzzi](.src/Elton_Sbruzzi.png) | ![Michel Leles](.src/Michel_Leles.png) | ![Vitor Curtis](.src/vitor_curtis.png) |
+ | :--------------------------------------: | :------------------------------------: | :------------------------------------: |
+ |              Elton Sbruzzi               |              Michel Leles              |              Vitor Curtis              |
 
-  <div style="flex: 1; text-align: center;">
-    <figure>
-      <img src=".src/vitor_curtis.png" alt="Vitor Curtis" width="125" height="125" />
-      <figcaption>Vitor Curtis</figcaption>
-    </figure>
-  </div>
-</div>
+
+
 
 ## Citação
 
