@@ -121,7 +121,7 @@ projeto. Informe seus links de acesso.
 
 ## Agradecimento
 
-Escolha um bom nome de projeto e adicione as imagens dos apoiadores para deixar sua
+Escolha um bom nome de projeto e adicione os logos dos apoiadores para deixar sua
 documentação com uma imagem mais profissional.
 
 ## Como citar
