@@ -1,21 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
-# Ignorar arquivos e pastas específicos do MkDocs
-/site/
-/.venv/
-
-# Ignorar arquivos de configuração do MkDocs
-/mkdocs.yml
-/mkdocs.yml.py
-
-# Ignorar outros arquivos temporários ou de compilação
-*.pyc
-*.pyo
-*.swp
-
-
-
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
