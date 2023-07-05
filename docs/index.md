@@ -50,31 +50,6 @@ Etapas
 
 [Apache License 2.0](LICENSE)
 
-## Agradecimento
-
-<div style="display: flex; justify-content: center;">
-  <div style="flex: 1; text-align: center;">
-    <figure>
-      <img src="Elton_Sbruzzi.png" alt="Elton Sbruzzi" width="150" height="150" />
-      <figcaption>Elton Sbruzzi</figcaption>
-    </figure>
-  </div>
-
-  <div style="flex: 1; text-align: center;">
-    <figure>
-      <img src="Michel_Leles.png" alt="Michel Leles" width="150" height="150" />
-      <figcaption>Michel Leles</figcaption>
-    </figure>
-  </div>
-
-  <div style="flex: 1; text-align: center;">
-    <figure>
-      <img src="vitor_curtis.png" alt="Vitor Curtis" width="150" height="150" />
-      <figcaption>Vitor Curtis</figcaption>
-    </figure>
-  </div>
-</div>
-
 ## Citação
 
 ### APA

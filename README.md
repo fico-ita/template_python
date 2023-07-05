@@ -16,12 +16,6 @@ Este projeto faz parte do grupo de interesse em Finanças Computacionais e inves
 
 [Apache License 2.0](LICENSE)
 
-## Agradecimentos
-
-
-| <img src=".src/Elton_Sbruzzi.png" alt="Elton Sbruzzi" width="125" height="125" /> Elton Sbruzzi | <img src=".src/Michel_Leles.png" alt="Michel Leles" width="125" height="125" /> Michel Leles | <img src=".src/vitor_curtis.png" alt="Vitor Curtis" width="125" height="125" /> Vitor Curtis |
-| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-
 
 
 ## Citação
