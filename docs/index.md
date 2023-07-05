@@ -40,8 +40,6 @@ Etapas
 
 
 
-
-
 ## Artigo
 
 [Pipeline de disponibilização dos Relatórios Obrigatórios no mercado de Capitais Brasileiro](Pipeline_de_disponibilização_de_relatórios_obrigatórios_no_mercado_de_capitais_brasileiro.pdf)
