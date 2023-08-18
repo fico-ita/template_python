@@ -175,6 +175,7 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 =======
+=======
 # Ignorar arquivos e pastas específicos do MkDocs
 /site/
 /.venv/
@@ -186,4 +187,6 @@ pyrightconfig.json
 # Ignorar outros arquivos temporários ou de compilação
 *.pyc
 *.pyo
+*.swp
+=======
 *.swp
