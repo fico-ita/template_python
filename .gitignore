@@ -174,3 +174,16 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+=======
+# Ignorar arquivos e pastas específicos do MkDocs
+/site/
+/.venv/
+
+# Ignorar arquivos de configuração do MkDocs
+/mkdocs.yml
+/mkdocs.yml.py
+
+# Ignorar outros arquivos temporários ou de compilação
+*.pyc
+*.pyo
+*.swp
