@@ -4,26 +4,17 @@ pré-processamento e indexação de relatórios.
 
 import io
 import json
+import re
 import subprocess
 import zipfile
 from pathlib import Path
 
 import PyPDF2
 import requests
-import torch
-import unidecode
-from transformers import (
-    BertForQuestionAnswering,
-    LongformerModel,
-    LongformerTokenizer,
-    T5ForConditionalGeneration,
-    T5Tokenizer,
-)
-
-
 import spacy
 import torch
 import torch.nn.functional as fun
+import unidecode
 from sklearn.metrics.pairwise import cosine_similarity
 from transformers import (
     BertForQuestionAnswering,
@@ -32,7 +23,6 @@ from transformers import (
     T5ForConditionalGeneration,
     T5Tokenizer,
 )
-
 
 model_for_question = BertForQuestionAnswering.from_pretrained(
     "bert-large-uncased-whole-word-masking-finetuned-squad",
@@ -47,13 +37,6 @@ slrb = Path("C:\\Users\\thgcn\\OneDrive\\Academico\\PO-245\\Projeto\\solr-9.2.1\
 model_for_question = BertForQuestionAnswering.from_pretrained(
     "bert-large-uncased-whole-word-masking-finetuned-squad",
 )
-
-
-
-
-
-
-
 
 def check_directory():
     """Verifica se o diretório informado pelo usuário é válido.

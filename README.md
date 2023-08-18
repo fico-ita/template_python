@@ -1,16 +1,56 @@
-# FICO - Pipeline (CPI)
+`PyCPI` : A package for capturing, NLP preprocessing,
+and Solr indexing of mandatory reports in the
+Brazilian Capital Market
+==============================================================================================
 
-Documentação do pacote Pipeline captura, pré-processamento e indexação de metadados (CPI)  no Github.
-Este projeto faz parte do grupo de interesse em Finanças Computacionais e investimentos Sistemáticos multidisciplinr atuando dentro do Instituto Tecnológico de Aeronáutica (FICO-ITA).
+This package delivers a pipeline that captures
+financial reports provided by the Brazilian Securities and Exchange Commission (CVM, 2023), performs preprocessing, including PDF-to-text conversion, tokenization, and tensor generation using the Transformer (Beltagy et al., 2020) architecture. It then indexes the metadata using `Apache Solr``
+ for efficient and fast information retrieval. Another functionality offered by the PyCPI package is text comparison, which measures the similarity between two tensors. The package also includes features such text summarization, highlighting the most significant sentences in the text,
+among others.
 
 
-## Documentação
+## Documentation
 
-- [Clique aqui](docs/index.md) para acessar a documentação
+- [Click here](docs/index.md) to access the documentation.
 
-* [Clique aqui](docs/Pipeline_de_disponibiliza%C3%A7%C3%A3o_de_relat%C3%B3rios_obrigat%C3%B3rios_no_mercado_de_capitais_brasileiro.pdf) para acessar o artigo
+* [Click here](docs/PCI_package.pdf) to access the manuscript.
   
-* [Clique aqui](docs/tutorials/tutorial_cpi.ipynb) para acessar o Jupyter Notebook com o passo a passo do pipeline CPI
+
+## How to install
+
+
+Step 1: Install Poetry
+```text
+Make sure you have Poetry installed on your system. You can follow the installation instructions on the official Poetry website:
+https://python-poetry.org/docs/#installation
+```
+
+Step 2: Clone the GitHub Repository
+
+```bash
+$ git clone https://github.com/fico-ita/po_245_2023_T4.git
+```
+Step 3: Navigate to the Cloned Directory
+
+
+```bash
+$ cd po_245_2023_T4
+```
+
+Step 4: Install Dependencies Using Poetry
+
+
+```bash
+$ poetry install
+```
+
+Step 5: Activate the Virtual Environment
+
+
+```bash
+$ poetry shell
+```
+
 
 ## License
 

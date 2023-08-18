@@ -1,8 +1,8 @@
 # Bem-vindo ao FICO
 
-Nesta página, apresentaremos a documentação do pacote Pipeline para captura, pré-processamento e indexação de metadados (CPI).
+On this page, we will present the documentation for the Pipeline package designed for metadata capture, preprocessing, and indexing.
 
-Este projeto faz parte do grupo de interesse em Finanças Computacionais e Investimentos Sistemáticos multidisciplinar, atuando dentro do Instituto Tecnológico de Aeronáutica ([FICO-ITA](https://fico-ita.github.io/fico/)).
+This project is part of the multidisciplinary Computational Finance and Systematic Investments interest group, operating within the Instituto Tecnológico de Aeronáutica  ([FICO-ITA](https://fico-ita.github.io/fico/)).
 
 ## Organização da documentação
 
@@ -13,9 +13,10 @@ A organização desta documentação de usuário consiste nas classes de documen
 1. Explanation
 
 
-As documentações acima são pensadas para o leitor usuário da solução.O público alvo são os desenvolvedores e arquitetos da solução.
 
-Nesta documentação o foco é a estrutura proposta para o pipeline e a organização da solução, apresentando um diagrama de componentes da solução e como eles se interagem. 
+The above documentations are crafted for the solution's user-reader. The target audience consists of the solution's developers and architects.
+
+In this documentation, the emphasis is on the proposed pipeline structure and solution organization, showcasing a solution's component diagram and illustrating their interactions.
 
 ## Pipeline CPI - FICO
 
@@ -24,8 +25,8 @@ Nesta documentação o foco é a estrutura proposta para o pipeline e a organiza
 ### Arquitetura proposta:
 
 <figure>
-  <img src="componente_cpi-P%C3%A1gina-2.drawio.png" alt="componente cpi" width="800" height="500" />
-  <figcaption>Pipeline de captura, pré-processamento e indexação de metadados</figcaption>
+  <img src="PyCPI.png" alt="componente cpi" width="800" height="400" />
+  <figcaption>Software Architecture PyCPI</figcaption>
 </figure>
 
 Etapas
@@ -42,7 +43,7 @@ Etapas
 
 ## Artigo
 
-[Pipeline de disponibilização dos Relatórios Obrigatórios no mercado de Capitais Brasileiro](Pipeline_de_disponibilização_de_relatórios_obrigatórios_no_mercado_de_capitais_brasileiro.pdf)
+[Pipeline de disponibilização dos Relatórios Obrigatórios no mercado de Capitais Brasileiro](PyCPI_package.pdf)
 
 ## Licença
 
