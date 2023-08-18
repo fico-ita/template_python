@@ -6,7 +6,6 @@ This package delivers a pipeline that captures
 financial reports provided by the Brazilian Securities and Exchange Commission (CVM, 2023), performs preprocessing, including PDF-to-text conversion, tokenization, and tensor generation using the Transformer (Beltagy et al., 2020) architecture. It then indexes the metadata using `Apache Solr``
  for efficient and fast information retrieval. Another functionality offered by the PyCPI package is text comparison, which measures the similarity between two tensors. The package also includes features such text summarization, highlighting the most significant sentences in the text,
 among others.
-=======
 Documentação do pacote Pipeline captura, pré-processamento e indexação de metadados (CPI)  no Github.
 Este projeto faz parte do grupo de interesse em Finanças Computacionais e investimentos Sistemáticos multidisciplinar atuando dentro do Instituto Tecnológico de Aeronáutica (FICO-ITA).
 
