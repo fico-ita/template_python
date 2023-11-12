@@ -1,65 +1,62 @@
-# Bem-vindo ao FICO
+# Welcome to FICO
 
-Leia a documentação do Mkdocs em [mkdocs.org](https://www.mkdocs.org).
+Created in 2023 by professors from graduate programs at the Instituto Tecnológico de Aeronáutica (ITA),
+FICO-ITA is a multidisciplinary interest group in Computational Finance and Systematic Investments
+operating within the ITA, in Brazil. This dynamic team teachs and researchs computational methods for the management
+of systematic and quantitative investments. ([FICO](https://fico-ita.github.io/en/fico/))
 
-## Comandos
 
-* `mkdocs new [dir-name]` - Cria um novo projeto.
-* `mkdocs serve` - Inicia o servidor live-reloading de documentação.
-* `mkdocs build` - Constrói o site da documentação.
-* `mkdocs -h` - Imprime a mensagem de ajuda.
+## Project
 
-## Estrutura da documentação
+This project constructs a stocks portfolio based on the MetaLabeling approach proposed by López de Prado[^1] and as implemented by Joubert[^2].
 
-    mkdocs.yml    # Arquivo de configuração.
-    docs/
-        index.md  # Página principal da documentação
-        ...       # Outras páginas via markdown, imagens e outros arquivos.
+It is part of the requirements for the completion of the graduate course "PO-245. Aprendizado de Máquina em Finanças
+Quantitativa" in 2023S2.
 
-## Organização da documentação
 
-Para a organização da documentação de usuário, baseie-se na proposta de
-[Diátaxis](https://diataxis.fr/), que consiste em 4 classes de documentos:
+[^1]: López de Prado, M. Advances in Financial Machine Learning, 1st ed. New York City: Wiley, 2018.
+[^2]: Joubert, J. F. 2022. “Meta-Labeling - Theory and Framework.” The Journal of Financial Data Science 4 (3) - 31–44.
 
-1. Tutorials
-1. How-To guides
-1. Reference
-1. Explanation
 
-!!! warning
-    Não é obrigatório seguir Diátaxis. Ela serve apenas como guia.
+## Documentation Structure
 
-As documentações acima são pensadas para o leitor usuário da solução.
+The purpose of this documentation is to provide a thorough understanding of the methods and techniques used in the project. It also aims to offer insights into the path taken to solve the problem at hand.
 
-Deve-se ainda considerar a documentação para fins acadêmicos e de engenharia de
-software, i.e., quando quem desenvolve o projeto é o leitor. Caso contrário,
-atualizações podem se tornar impraticáveis.
+While primarily designed for users of the solution, this documentation is also valuable for academics and practitioners looking to replicate and further develop the project.
 
-Esta documentação possui grande intersecção com *Explanation*. A diferença é que o
-público de *Explanation* é o usuário da solução, enquanto na documentação acadêmica e
-para desenvolvimento o público alvo são os desenvolvedores e arquitetos da solução.
+The documentation is divided into four main sections, each serving a distinct purpose:
 
-Nesta documentação o foco é destacar as tomadas de decisão e organização da solução,
-preferencialmente apesentando um diagrama de componentes da solução e como eles se
-interagem. Em nossa disciplina, iremos incluir o artigo como forma de atingir estes
-objetivos.
 
-## Calculadora FICO
+- **Tutorials:** In this section, readers will find practical, hands-on documentation intended to facilitate learning through real-world applications of the solution.
+
+- **How-To Guides:** These guides present step-by-step instructions to ensure the proper functioning of the code and yields the expected results.
+
+- **Reference:** This section provides a detailed description of the methods and techniques used in the solution, offering valuable insights into how everything works.
+
+- **Explanation:** This is a comprehensive resource that delves into the details of the solution. It aims to clarify the decisions made during the development process and provides valuable insights into the project's evolution.
+
+
+## FICO packages
 
 ::: fico
 
-## Projeto
+## Article
 
-Adicione aqui o pdf do artigo.
+The white paper of this project is available at
+[Stocks Portfolio Construction Based on Meta-Labeling Machine Learning](materials/ITA_PO245_WhitePaper-IEEE_Access_LaTeX_template_AfonsoFeitoza.pdf).
 
-# Licença
+## License
 
-Similar ao README.md
+Project under license [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Agradecimento
+## Acknowledgements
 
-Similar ao README.md
+The author is grateful to the Professors Elton Sbruzzi, Vitor Curtis and Michel Leles for their invaluable orientation, as well as to the colleagues of PO-245 course for their
+insightful discussions.
 
-## Como citar
+## How to cite
+
+To cite this project, use the following reference:
+
 
 Similar ao README.md

@@ -27,6 +27,8 @@ plugins:
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - footnotes
+
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.superfences:
