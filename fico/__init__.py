@@ -3,4 +3,5 @@
 Módulos exportados por este pacote:
 
 - `calculations`: Provê várias operações matemáticas
+- `lstm_strategy`: Mount portfolio
 """
