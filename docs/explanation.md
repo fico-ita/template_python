@@ -18,6 +18,9 @@ The strategy involves a multi-step process that includes:
 
 - Calculating volatility using rolling standard deviations.
 - Assessing momentum over varying periods (1-month, 3-month, and 6-month).
+
+![Momentum Analysis](./tutorials/Momentum_visualization.png)
+
 - Combining these metrics to select the top 10 stocks that meet specific criteria for both low volatility and high momentum.
 
 ### LSTM Neural Network Implementation
@@ -28,4 +31,17 @@ The strategy employs an LSTM neural network to predict stock values based on his
 
 By integrating both low volatility and high momentum, this strategy aims to strike a balance between risk and potential return. It aims to identify stocks that exhibit strong upward trends while minimizing exposure to abrupt fluctuations.
 
+## Primary Results
+
+In the forward backtesting made from 2013 to 2015, the primary rolling Sharpe ratio settled with a mean value of 2 - an average seen by overall investors as of good quality.
+
+![Rolling Sharpe](./tutorials/rolling_sharpe_tearsheet.png)
+
+The monthly active returns were found to be mainly positive, with overperforming months being January and March:
+
+![Monthly Active Returns](./tutorials/monthly_active_returns.png)
+
+In return quantiles, those would be seen as more favorable in yearly time divisions, as we can see below:
+
+![Monthly Active Returns](./tutorials/return%20quantiles.png)
 ---
