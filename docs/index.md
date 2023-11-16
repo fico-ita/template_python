@@ -7,11 +7,11 @@
 
 ## Project
 
-[Link to the strategy article](Mestrado.pdf)
+[Link to the strategy article](files/Mestrado.pdf)
 
 
 ## Tear Sheet
-[Link to Tear Sheet](portPINxIbov.html)
+[Link to Tear Sheet](files/portPINxIbov.html)
 
 ## Acknowledgment
 
