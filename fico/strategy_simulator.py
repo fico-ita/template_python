@@ -18,7 +18,7 @@ def information_event_strategy(pin_window=60, verbose=False, persist_data=True, 
     pins = md.pin_estimation.estimate_all_pins(quotes, window=pin_window, verbose=verbose)
 
     eligible_stocks = md.stock_selection.filter(eco_data['volumes'])
-    portfolios = md.portfolio_build.portfolio_build(pins, eligible_stocks)
+    portfolios = md.portfolio_build.build_portfolio(pins, eligible_stocks)
     returns = md.returns.calculate_all_portfolios_returns(portfolios['weights'], eco_data['closing_prices'])
 
     if persist_data:

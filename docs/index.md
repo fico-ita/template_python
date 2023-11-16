@@ -10,7 +10,7 @@
 [Link to the strategy article](files/Mestrado.pdf)
 
 
-## Tear Sheet
+## Tearsheet
 [Link to Tear Sheet](files/portPINxIbov.html)
 
 ## Acknowledgment

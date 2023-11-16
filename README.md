@@ -18,7 +18,7 @@ stock_selection: Offers a selection of stocks.
 [Link to the strategy article](files/Mestrado.pdf)
 
 
-## Tear Sheet
+## Tearsheet
 [Link to Tear Sheet](files/portPINxIbov.html)
 
 ## Acknowledgment

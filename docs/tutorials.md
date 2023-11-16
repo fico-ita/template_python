@@ -8,6 +8,11 @@ and than on the project root, to install the necessary dependencies, run:
 
 `poetry install`.
 
+## Workflow
+
+![workflow.png](files/workflow.png)
+
+
 ## Imports and PIN estimation
 
 You may use `tutorial.ipynb` to start understanding the workflow. 
