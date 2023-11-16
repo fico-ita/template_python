@@ -1,4 +1,4 @@
-"""Provide technical details of the proposed low-volatility-momentum strategy.
+"""Provides technical details of the proposed low-volatility-momentum strategy.
 
 This module allows the user to make a wallet based on said strategy.
 

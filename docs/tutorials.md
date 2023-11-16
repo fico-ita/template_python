@@ -1,6 +1,6 @@
 # Tutorial
 
-This section aims to help newcomers get started with the code in this project. It focuses on a hands-on, learning-oriented approach to guide users through practical examples.
+This section aims to help newcomers get started with the code in this project. It focuses on a hands-on, learning-oriented approach to guide users through practical examples. To refer to the main jupyter notebook used, click [here](./tutorials/main.ipynb)
 
 ## Getting Started
 

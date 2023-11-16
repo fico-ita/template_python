@@ -45,3 +45,11 @@ In return quantiles, those would be seen as more favorable in yearly time divisi
 
 ![Monthly Active Returns](./tutorials/return%20quantiles.png)
 ---
+
+Lastly, to give potential users an idea of mean losses per quarter period during the backtest, the following underwater plot gives out a mean negative returns close to 2%:
+
+![Underwater plot](./tutorials/underwater_plot.png)
+
+## Next Steps
+
+As to future endeavors in this project, we may include a longer-period backtesting to better visualize the model's performance. We may also include loss-stop steps, as to try to minimize certain months' losses by including advance orders to sell stocks beforehand.
