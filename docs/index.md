@@ -1,65 +1,69 @@
-# Bem-vindo ao FICO
+# Welcome!
 
-Leia a documentação do Mkdocs em [mkdocs.org](https://www.mkdocs.org).
+## Project Documentation Breakdown
 
-## Comandos
+1. [Tutorial](./tutorials.md): Practical guide for new users, explaining code usage and essential steps for stock selection strategy.
 
-* `mkdocs new [dir-name]` - Cria um novo projeto.
-* `mkdocs serve` - Inicia o servidor live-reloading de documentação.
-* `mkdocs build` - Constrói o site da documentação.
-* `mkdocs -h` - Imprime a mensagem de ajuda.
+2. [How-to Guide](./how-to-guides.md): Documentation focused on problem-solving approaches, assisting users in resolving common tasks using the code.
 
-## Estrutura da documentação
+3. [Reference](./reference.md): Detailed documentation of functions, modules, and methods provided in the code.
 
-    mkdocs.yml    # Arquivo de configuração.
-    docs/
-        index.md  # Página principal da documentação
-        ...       # Outras páginas via markdown, imagens e outros arquivos.
+4. [Explanation](./explanation.md): Explains internal workings, rationale behind choices, and concepts used in the stock selection strategy.
 
-## Organização da documentação
+### Decision-making and Solution Organization
 
-Para a organização da documentação de usuário, baseie-se na proposta de
-[Diátaxis](https://diataxis.fr/), que consiste em 4 classes de documentos:
+We highlight key decisions made during the solution implementation:
 
-1. Tutorials
-1. How-To guides
-1. Reference
-1. Explanation
+- Use of an LSTM neural network to predict selected stocks' trends using an exogenous variables approach.
+- Modular organization of the code for ease of maintenance and reusability.
+- Stock selection strategy based on volatility and momentum analysis.
 
-!!! warning
-    Não é obrigatório seguir Diátaxis. Ela serve apenas como guia.
+### Component Diagram - Diagram Visualization Bug
 
-As documentações acima são pensadas para o leitor usuário da solução.
+The component diagram below illustrates the structure of the proposed strategy:
 
-Deve-se ainda considerar a documentação para fins acadêmicos e de engenharia de
-software, i.e., quando quem desenvolve o projeto é o leitor. Caso contrário,
-atualizações podem se tornar impraticáveis.
+```mermaid
+flowchart LR
+    A[LSTM Stock Prediction Project] -->|Stock Data Analysis| B(Data Module);
+    B -->|Stock Selection| C(Initial Exploratoray Analysis Done);
+    C -->|Model Preparation| D(Model Prepared);
+    D -->|Stock Trend Prediction| E(Predicted Returns of Selected Stocks);
+    E -->|Portfolio Construction| F(Mount Wallet);
+```
+This diagram showcases how modules interact within the LSTM strategy, from data analysis to portfolio construction.
 
-Esta documentação possui grande intersecção com *Explanation*. A diferença é que o
-público de *Explanation* é o usuário da solução, enquanto na documentação acadêmica e
-para desenvolvimento o público alvo são os desenvolvedores e arquitetos da solução.
+## Project
 
-Nesta documentação o foco é destacar as tomadas de decisão e organização da solução,
-preferencialmente apesentando um diagrama de componentes da solução e como eles se
-interagem. Em nossa disciplina, iremos incluir o artigo como forma de atingir estes
-objetivos.
+Selects 10 stocks based on a low volatility and high momentum trading strategy, and predicts 1-day ahead return values, building a corresponding portfolio based on such. Exported modules for this package:
 
-## Calculadora FICO
+- `lstm_strategy`: Mount portfolio
+- `get_retornos_sp`: Retrieve the returns of SP&500 stocks
+- `load_data`: Load all stock historical data provided
+- `strategy_simulator`: Simulates the selected strategy
 
-::: fico
+# Licenses
 
-## Projeto
+- Data provider: [Stock Market, Funds, Fixed Income and Asset Consolidation Data Analysis](https://www.comdinheiro.com.br/)
+- Supporting group: [FICO](https://fico-ita.github.io/)
+- Code License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-Adicione aqui o pdf do artigo.
+## Acknowledgements
 
-# Licença
+- We thank the support of the **comdinheiro** platform in providing all the useful historical stock data used in this project, and also
+- We thank the intelectual and practical support provided by all existing personas within the **FICO** group.
 
-Similar ao README.md
+## How to cite
 
-## Agradecimento
-
-Similar ao README.md
-
-## Como citar
-
-Similar ao README.md
+Include in your project citations the following:
+```python
+authors:
+- family-names: "Bustos"
+  given-names: "Victor"
+  LinkedIn: "https://www.linkedin.com/in/victoropb/"
+- family-names: "Nunes"
+  given-names: "Marcus"
+  LinkedIn: "https://www.linkedin.com/in/marcusganunes/"
+title: "Low Volatility and High Momentum Investment Strategy"
+version: 1.0
+url: "https://github.com/fico-ita/po_245_2023_S2_T4/tree/main"
+```
