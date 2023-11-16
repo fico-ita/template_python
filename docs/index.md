@@ -24,11 +24,11 @@ The component diagram below illustrates the structure of the proposed strategy:
 
 ```mermaid
 flowchart LR
-    A[LSTM Stock Prediction Project] -->|Stock Data Analysis| B(Data Module);
-    B -->|Stock Selection| C(Initial Exploratoray Analysis Done);
-    C -->|Model Preparation| D(Model Prepared);
-    D -->|Stock Trend Prediction| E(Predicted Returns of Selected Stocks);
-    E -->|Portfolio Construction| F(Mount Wallet);
+    A[LSTM Stock Prediction Project] -->|Stock Data Analysis| B[Data Module];
+    B -->|Stock Selection| C[Initial Exploratory Analysis Done];
+    C -->|Model Preparation| D[Model Prepared];
+    D -->|Stock Trend Prediction| E[Predicted Returns of Selected Stocks];
+    E -->|Portfolio Construction| F[Mount Wallet];
 ```
 This diagram showcases how modules interact within the LSTM strategy, from data analysis to portfolio construction.
 
