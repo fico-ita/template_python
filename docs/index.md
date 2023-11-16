@@ -1,4 +1,4 @@
-# Bem-vindo ao FICO
+# Welcome to FICO
 
 
 ## Strategy
@@ -8,6 +8,10 @@
 ## Project
 
 [Link to the strategy article](Mestrado.pdf)
+
+
+## Tear Sheet
+[Link to Tear Sheet](portPINxIbov.html)
 
 ## Acknowledgment
 
