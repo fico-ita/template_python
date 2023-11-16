@@ -1,4 +1,4 @@
-"""Estimates Probability of Insider Trading for stocks and constructs portfolios based on these estimates.
+"""The PIN project estimates the Probability of Insider Trading for stocks and constructs portfolios based on these estimates.
 
 Modules exported by this package:
 

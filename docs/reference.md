@@ -1,6 +1,21 @@
-This part of the project documentation focuses on an **information-oriented** approach.
-Use it as a reference for the technical implementation of the `calculator` project code.
+Reference for the technical implementation of the `PIN` project code.
 
-## Calculations
+## Stock Selection
 
-::: fico.calculations
+::: fico.modules.stock_selection
+
+## PIN Estimation
+
+::: fico.modules.pin_estimation
+
+## Portfolio Build
+
+::: fico.modules.portfolio_build
+
+## Returns
+
+::: fico.modules.returns
+
+## Dataset
+
+::: fico.modules.dataset

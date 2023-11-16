@@ -1,3 +1,12 @@
+"""
+Provide 4 stock filters:
+
+    - Company's most traded stock filter
+    - Minimum average volume filter
+    - Minimum listed time filter
+    - Logical AND of the three filters above
+"""
+
 import pandas as pd
 import datetime as dt
 
@@ -13,7 +22,9 @@ def filter(volumes):
     2. The stock has an average daily trading volume of R$ 500,000 in the previous period.
     3. The stock has been listed for at least 2 years from the observation moment.
 
+
     :param volumes: Financial volumes traded for assets
+
     :return: Binary dataframe indicating whether a particular asset is eligible for a specific period
     '''
 
@@ -29,8 +40,12 @@ def filter(volumes):
 def most_traded_stock_filter(volumes, period='M'):
     '''
     Selects the most traded stock of the company in the previous period.
+
+
     :param volumes: Financial volumes traded for assets
+
     :param period: filtering period. Default='M', meaning monthly
+
     :return: Binary dataframe indicating whether a particular asset is eligible for a specific period
     '''
     stocks = stocks_per_firm(volumes.columns)
@@ -49,7 +64,10 @@ def most_traded_stock_filter(volumes, period='M'):
 def stocks_per_firm(stock_list):
     '''
     Helper function for most_traded_stock_filter, grouping stocks by company
+
+
     :param stock_list: list of stocks
+
     :return: Dictionary with the B3 company code as the key and lists of stocks as values
     '''
     firm_dict = dict()
@@ -63,7 +81,10 @@ def stocks_per_firm(stock_list):
 def most_traded_per_period(volumes):
     '''
     Helper function for most_traded_stock_filter, checks which stock has the highest liquidity
+
+
     :param volumes: Financial volumes traded for assets of one company
+
     :return: Binary dataframe indicating whether a particular asset is eligible for a specific period
     '''
     result = pd.DataFrame(index=volumes.index, columns=volumes.columns, dtype=bool)
@@ -79,9 +100,14 @@ def most_traded_per_period(volumes):
 def minimum_volume_filter(volumes, period='M', limit=5e5):
     '''
     Minimum volume filter. Checks if stocks meet the required average volume limit
+
+
     :param volumes: Financial volumes traded for assets of one company
+
     :param period: filtering period. Default='M', meaning monthly
+
     :param limit: Minimum required limit. Default=5e5, meaning 500,000
+
     :return: Binary dataframe indicating whether a particular asset is eligible for a specific period
     '''
     return volumes.resample(period).mean() >= limit
@@ -90,9 +116,14 @@ def minimum_volume_filter(volumes, period='M', limit=5e5):
 def minimum_listed_time_filter(volumes, period='M', limit=500):
     '''
     Listing time filter. Checks if stocks meet the minimum listing time requirement
+
+
     :param volumes: Financial volumes traded for assets of one company
+
     :param period: filtering period. Default='M', meaning monthly
+
     :param limit: Minimum required limit. Default=500, meaning 500 business days or 2 years
+
     :return: Binary dataframe indicating whether a particular asset is eligible for a specific period
     '''
     result = pd.DataFrame(columns=volumes.columns, index=volumes.index)
@@ -111,7 +142,10 @@ def minimum_listed_time_filter(volumes, period='M', limit=500):
 def get_first_trading_day(volumes: pd.Series):
     '''
     Helper function for minimum_listed_time_filter. Finds the first trading day of the stock
+
+
     :param volumes: Financial volumes traded for assets of one company
+
     :return: Date of the first trading day
     '''
     trading_dates = volumes.dropna().index

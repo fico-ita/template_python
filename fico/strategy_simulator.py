@@ -1,3 +1,8 @@
+'''
+    Provides the workflow for Stock Selection, PIN estimation, portfolio creation, and backtesting results generation.
+'''
+
+
 import modules as md
 import pandas as pd
 

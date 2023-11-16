@@ -1,3 +1,8 @@
+'''
+    Provides the Probability of Insider Trading (PIN) estimation according to Easley et al. (1996)
+'''
+
+
 import numpy as np
 import pandas as pd
 from scipy.optimize import minimize
@@ -13,9 +18,14 @@ iteration_likelihood = None
 def poisson_likelihood(params, buyers, sellers):
     '''
     Estimate the likelihood of the Poisson Mass Function, as described by Easley & O'Hara (1996)
+
+
     :param params: θ = (alpha, mu, delta, eps_b, eps_s)
+
     :param buyers: buying flux series
+
     :param sellers: selling flux series
+
     :return: negative value of likelihood
     '''
 
@@ -50,14 +60,22 @@ def poisson_likelihood(params, buyers, sellers):
 def estimate_params(data, iterations=10):
     '''
     Estimate PIN params:
+
         alpha = Probability of the occurrence of an informational event
+
         delta = Conditional probability of an event with a positive signal
+
         mu = Informed agents flux
+
         eps_s = Uninformed agents selling flux
+
         eps_b = Uninformed agents buying flux
 
+
     :param data: pd.DataFrame with time series for the estimation
+
     :param iterations: number of maximum-likelihoods to calculate, to get the highest likelihood
+
     :return: params for the highest likelihood
     '''
     avg = data['comprador'].mean()
@@ -84,7 +102,9 @@ def estimate_params(data, iterations=10):
 def get_highest_likelihood_params():
     '''
     Select the highest likelihood
-    :return:
+
+
+    :return estimations with highest likelihood:
     '''
     global all_likelihoods
     result_params = {'likelihood': -np.inf}
@@ -98,7 +118,10 @@ def get_highest_likelihood_params():
 def pin_equation(params):
     '''
     PIN equation, according to Easley & O'Hara (1996)
+
+
     :param params: pd.DataFrame with the params alpha, mu, eps_b, and eps_s
+
     :return: float number representing the PIN estimation
     '''
     α = params['alpha']
@@ -111,8 +134,12 @@ def pin_equation(params):
 def rolling_pin(data, window=60):
     '''
     Estimate PIN in a rolling window for a time series
+
+
     :param data: pd.DataFrame time series with `comprador` and `vendedor`
+
     :param window: integer indicating the window size (default = 60)
+
     :return: pd.DataFrame containing PIN and the estimated params
     '''
     data.sort_index(inplace=True)
@@ -135,9 +162,14 @@ def rolling_pin(data, window=60):
 def estimate_all_pins(data, window=60, verbose=False):
     '''
     Calculate PIN in a rolling window for all data
+
+
     :param data: pd.DataFrame with symbol (ticker), `comprador`, and `vendedor`
+
     :param window: integer indicating the window size (default = 60)
+
     :param verbose: if True, it enables prints during the execution
+
     :return:
     '''
     pin_params = pd.DataFrame()
