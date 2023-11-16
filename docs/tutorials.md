@@ -13,7 +13,7 @@ and than on the project root, to install the necessary dependencies, run:
 You may use `tutorial.ipynb` to start understanding the workflow. 
 Its first cell will have the modules importation for the first part of the workflow, which is the PIN Estimation.
 
-```
+```python3
 import pandas as pd
 
 from fico.modules import dataset
@@ -24,7 +24,7 @@ In sequence it will load quotes from the database and store them in 'quotes'  `q
 And now you will be able to estimate PINs by running `pins = pin_estimation.estimate_all_pins(quotes, window=60, verbose=True)`.
 The entire process use to last 3 hours long, so if you rather have a small sample of the stocks, just set `filter = True` and select the stocks you wish to estimate.
 
-```
+```python3
 filter = False
 if filter:
     stocks = {'PETR4', 'VALE3', 'MGLU3'}
@@ -32,7 +32,7 @@ if filter:
 ```
 In addition, there is a full PIN sample stored to save you time in the getting started process. Therefore you may set `estimate_all_pins = False` and let the code fetch the pre-estimated PINs.
 
-```
+```python3
 estimate_all_pins = False
 if estimate_all_pins:
     pins = pin_estimation.estimate_all_pins(quotes, window=60, verbose=True)
@@ -45,7 +45,7 @@ pins.sample(5)
 
 For this second part, you shall import the necessary modules and load essential data.
 
-```
+```python3
 from fico.modules import stock_selection
 from fico.modules import portfolio_build
 
@@ -53,7 +53,7 @@ eco_data = dataset.load_economatica_quotes()
 ```
 Then run the filter you wish to use to set the eligible stocks. That being found, now you are able to build your portfolio:
 
-```
+```python3
 eligible_stocks = stock_selection.filter(eco_data['volumes'])
 portfolios = portfolio_build.build_portfolio(
     pins,
@@ -66,7 +66,7 @@ portfolios
 which contains a stock as key and the weight on the portfolio as value. 
 
 It will be used to calculate returns.
-```
+```python3
 from fico.modules import returns
 r = returns.calculate_all_portfolios_returns(portfolios['weights'], eco_data['closing_prices'])
 ```
