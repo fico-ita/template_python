@@ -1,6 +1,6 @@
 # Welcome to FICO
 
-Documentação do projeto Estratégia com `Probabilidade de Insider Trading` no Github.
+Documentation of the project `Strategy with Probability of Insider Trading` on GitHub.
 
 ## Strategy
 
