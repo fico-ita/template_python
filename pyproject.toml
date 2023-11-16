@@ -8,6 +8,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+scipy = "^1.9.3"
+pandas = "^1.5.2"
+numpy = "^1.23.5"
+poetry = "^1.7.0"
 
 [tool.poetry.group.dev.dependencies]
 mkdocs = "^1.4.2"
