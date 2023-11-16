@@ -1624,6 +1624,24 @@ files = [
 diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
+name = "pyright"
+version = "1.1.335"
+description = "Command line wrapper for pyright"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pyright-1.1.335-py3-none-any.whl", hash = "sha256:1149d99d5cea3997010a5ac39611534e0426125d5090913ae5cb1e0e2c9fbca3"},
+    {file = "pyright-1.1.335.tar.gz", hash = "sha256:12c09c1644b223515cc342f7d383e55eefeedd730d7875e39a2cf338c2d99be4"},
+]
+
+[package.dependencies]
+nodeenv = ">=1.6.0"
+
+[package.extras]
+all = ["twine (>=3.4.1)"]
+dev = ["twine (>=3.4.1)"]
+
+[[package]]
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
@@ -1636,6 +1654,20 @@ files = [
 
 [package.dependencies]
 six = ">=1.5"
+
+[[package]]
+name = "python-dotenv"
+version = "1.0.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "python-dotenv-1.0.0.tar.gz", hash = "sha256:a8df96034aae6d2d50a4ebe8216326c61c3eb64836776504fcca410e5937a3ba"},
+    {file = "python_dotenv-1.0.0-py3-none-any.whl", hash = "sha256:f5971a9226b701070a4bf2c38c89e5a3f0d64de8debda981d1db98583009122a"},
+]
+
+[package.extras]
+cli = ["click (>=5.0)"]
 
 [[package]]
 name = "pytz"
@@ -2281,4 +2313,4 @@ requests = ">=2.26"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.13"
-content-hash = "b78ac1cfecac07d3f5d2f4143f49e2c5f4bde1c6778b715580d5d848b740ef63"
+content-hash = "daf32a3f2a9ab14284066dde96fdc79835b5254a42b6b0e4c121a23caa71e057"

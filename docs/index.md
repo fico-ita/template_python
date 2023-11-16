@@ -27,13 +27,13 @@ While primarily designed for users of the solution, this documentation is also v
 The documentation is divided into four main sections, each serving a distinct purpose:
 
 
-- **Tutorials:** In this section, readers will find practical, hands-on documentation intended to facilitate learning through real-world applications of the solution.
+- [**Tutorials:**](tutorials.md) In this section, readers will find practical, hands-on documentation intended to facilitate learning through real-world applications of the solution.
 
-- **How-To Guides:** These guides present step-by-step instructions to ensure the proper functioning of the code and yields the expected results.
+- [**How-To Guides:**](how-to-guides.md) These guides present step-by-step instructions to ensure the proper functioning of the code and yields the expected results.
 
-- **Reference:** This section provides a detailed description of the methods and techniques used in the solution, offering valuable insights into how everything works.
+- [**Reference:**](reference.md) This section provides a detailed description of the methods and techniques used in the solution, offering valuable insights into how everything works.
 
-- **Explanation:** This is a comprehensive resource that delves into the details of the solution. It aims to clarify the decisions made during the development process and provides valuable insights into the project's evolution.
+- [**Explanation:**](explanation.md) This is a comprehensive resource that delves into the details of the solution. It aims to clarify the decisions made during the development process and provides valuable insights into the project's evolution.
 
 
 ## FICO packages
@@ -51,7 +51,7 @@ Project under license [Apache License 2.0](https://www.apache.org/licenses/LICEN
 
 ## Acknowledgements
 
-The author is grateful to the Professors Elton Sbruzzi, Vitor Curtis and Michel Leles for their invaluable orientation, as well as to the colleagues of PO-245 course for their
+The author is grateful to the Professors Elton Sbruzzi, Vitor Curtis and Michel Leles for their invaluable orientation, Renan Lima for his Unrestricted support whenever requested, as well as to the colleagues of PO-245 course for their
 insightful discussions.
 
 ## How to cite
@@ -59,4 +59,4 @@ insightful discussions.
 To cite this project, use the following reference:
 
 
-Similar ao README.md
+TBD (`Similar to README.md`)

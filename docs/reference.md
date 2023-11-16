@@ -1,6 +1,9 @@
-This part of the project documentation focuses on an **information-oriented** approach.
-Use it as a reference for the technical implementation of the `calculator` project code.
 
-## Calculations
 
-::: fico.calculations
+<div style="text-align: center;">
+    <img src="../images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
+</div>
+
+
+::: fico.strategy_meta_labeling_r04
+

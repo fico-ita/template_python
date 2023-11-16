@@ -1,39 +1,71 @@
-This part of the project documentation focuses on a
-**problem-oriented** approach. You'll tackle common
-tasks that you might have, with the help of the code
-provided in this project.
+To get started with the **Stocks Portfolio Construction Based on a Meta-Labeling** project 
+follow the steps described below.
 
-## How To Add Two Numbers?
 
-You have two numbers and you need to add them together.
-You're in luck! The `calculator` package can help you
-get this done.
+### Installation
 
-Download the code from this GitHub repository and place
-the `calculator/` folder in the same directory as your
-Python script:
+Download this project from the following GitHub repository:
+```bash
+poetry add git+https://github.com/fico-ita/po_245_2023_S2_T5.git
+```
 
-    your_project/
+Get FICO's stocks data from the GitHub below. Copy folders `dataset` and `modules` to
+directory `po_245_2023_S2_T5`.
+```bash
+poetry add git+https://github.com/fico-ita/template_projetos.git
+```
+
+The resulting directory structure must look like this:
+
+    po_245_2023_S2_T5/
     │
-    ├── calculator/
+    ├── docs/
+    │   ├── images/
+    │   ├── materials/
+    │   ├── tutorials/
+    │   ├── index.md
+    │   ├── tutorials.md    
+    │   ├── how-to-guides.md
+    │   ├── reference.md
+    │   └── explanation.md
+    │
+    ├── fico/
     │   ├── __init__.py
-    │   └── calculations.py
+    │   └── strategy_meta_labeling_r04.py
     │
-    └── your_script.py
+    ├── dataset/    
+    │
+    ├── modules/    
+    │
+    └── mkdocs.yml
 
-Inside of `your_script.py` you can now import the
-`add()` function from the `calculator.calculations`
-module:
 
-    # your_script.py
-    from calculator.calculations import add
 
-After you've imported the function, you can use it to add any two numbers that you need
-to add:
+### Usage
 
-    # your_script.py
-    from calculator.calculations import add
+With the above structure in place, the package can be imported and executed as follows:
 
-    print(add(20, 22))  # OUTPUT: 42.0
+```python
+from fico.strategy_meta_labeling_r04 import D_strategy_meta_labeling
+Portifolio = D_strategy_meta_labeling(dict_data, t = 2000, size = 10, window_size= 500)
+```
 
-You're now able to add any two numbers, and you'll always get a `float` as a result.
+This way you should be able to get the following next-day[^1] portifolio of *10* stocks with their 
+allocation weights:
+
+```bash
+        date        ticker  weights
+        2019-05-11  ALB	    0.101264
+        2019-05-11  REGN    0.101264
+        2019-05-11  MYL	    0.101264
+        2019-05-11  BKNG    0.100882
+        2019-05-11  ADI	    0.100286
+        2019-05-11  PHM	    0.099938
+        2019-05-11  AES     0.099651
+        2019-05-11  PXD     0.098805
+        2019-05-11  WELL    0.098347
+        2019-05-11  FDX     0.098298
+```
+
+[^1]:starting the dataset at `t=2000` and spaning it through `window_size= 500` days
+yields `2019-05-10` as the dataset last entry day.

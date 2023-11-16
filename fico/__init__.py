@@ -1,7 +1,5 @@
-"""Meta-Labeling Strategy.
+"""Modules exported by this package:
 
-Modules exported by this package:
-
-strategy_MetaLabeling.py: Creates a portfolio (stocks and weights) through a pipeline
+strategy_meta_labeling_r04.py: Creates a portfolio (stocks and weights) through a pipeline
 based on the MetaLabeling approach.
 """
