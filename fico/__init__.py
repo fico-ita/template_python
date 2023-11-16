@@ -1,6 +1,9 @@
-"""Realiza cálculos matemáticos com funções próprias.
+"""Estimates Probability of Insider Trading for stocks and constructs portfolios based on these estimates.
 
-Módulos exportados por este pacote:
+Modules exported by this package:
 
-- `calculations`: Provê várias operações matemáticas
+    - pin_estimation: Provides Probability of Insider Trading estimates.
+    - portfolio_build: Facilitates portfolio construction.
+    - returns: Supports return calculations.
+    - stock_selection: Offers a selection of stocks.
 """
