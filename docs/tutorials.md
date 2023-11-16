@@ -13,6 +13,13 @@ In this tutorial, you'll learn how to utilize the LSTM neural network for stock 
 **Initial Setup**
 
    - Clone the repository from [GitHub link](https://github.com/fico-ita/po_245_2023_S2_T4/tree/dev) - **fico** folder.
+   - Install relevant dependencies:
+```python
+python -m venv
+pip install poetry
+poetry install
+poetry add numpy pandas scikit-learn matplotlib tensorflow seaborn statsmodels tqdm quantstats
+```
 !!! warning
     Ensure Python (version 3.9 or higher) and required packages are installed (`pandas`, `numpy`, `tensorflow`, `seaborn`, `matplotlib`).
 
