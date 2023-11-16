@@ -76,5 +76,5 @@ from fico.modules import returns
 r = returns.calculate_all_portfolios_returns(portfolios['weights'], eco_data['closing_prices'])
 ```
 
-Since the target portfolio is long & short according to the [article](Mestrado.pdf), so calculate_all_portfolios_returns returns a dataframe
+Since the target portfolio is long & short according to the [article](files/Mestrado.pdf), so calculate_all_portfolios_returns returns a dataframe
 with: long (leveraged), short, longonly, and long_short portfolios returns.
