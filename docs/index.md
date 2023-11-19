@@ -65,7 +65,7 @@ To cite this project, use the following reference:
     author = {Feitoza, A. P.},
     title = {Stocks Portfolio Construction Based on a Meta-Labeling ML Approach},
     year = {2023},
-    DOI = {10.5281/zenodo.9990001},
+    DOI = {10.5281/zenodo.9990001} [TBD],
     publisher = {Zenodo},
     url = {https://doi.org/10.5281/zenodo.9990001} [TBD]
 }    
