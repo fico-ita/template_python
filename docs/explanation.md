@@ -58,7 +58,7 @@ Although it does not reflect the optimal position sizing [3], the use of Empiric
 Cumulative Distribution Function (ECDF) serves this purpose in a simple manner (see picture below).
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
+    <img src="../docs/images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
 </div>
 
 Following the procedures outlined by H&T in their [GitHub](https://github.com/hudson-and-thames/meta-labeling/tree/master/theory_and_framework), 
