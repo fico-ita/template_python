@@ -1,134 +1,93 @@
-# Estrutura FICO
+# FICO T3
 
-Documentação do pacote XXX no Github.
-Utilize o README.md mais como um ponteiro para a documentação oficial e instruções
-pertinentes.
+FICO-ITA is a multidisciplinary interest group in Computational Finance and Systematic Investments
+operating within the ITA, in Brazil. 
 
-Não esqueça de preencher as seções *Como citar* e *Agradecimento*, citando
-explicitamente as empresas parceiras que apoiaram a solução.
+## Project
 
-# TODO
+This project constructs a stocks portfolio based on the MetaLabeling approach proposed by López de Prado and as implemented by Joubert.
 
-- Falta adicionar testes e log
-- Mudar pasta padrão de código para src
-- Testar empacotamento
+It is part of the requirements for the completion of the graduate course "PO-245. Aprendizado de Máquina em Finanças
+Quantitativa" in 2023S2.
 
-## Estrutura
+## Usage
 
-Esta estrutura utiliza basicamente
+### Installation
 
-- Poetry como ferramenta de empacotamento e gerenciador de pacotes
-- [Mkdocs](https://www.mkdocs.org/) para documentação, com template
-  [Material](https://squidfunk.github.io/mkdocs-material/setup/), e
-  [mkdocstrings](https://mkdocstrings.github.io/) para formatação do docstring no
-  [formato Google](https://google.github.io/styleguide/pyguide.html)
-- Ruff e Black são usados para estilo de código
-- Pre-commit é utilizado para verificações antes de `commit`
-
-Lembre-se que o pacote deve conter a parte reproduzível de seu projeto. O uso deve ser
-construído como um dos exemplos ou em outro repositório, que utiliza este pacote.
-### Por onde começar
-
-O arquivo `pyproject.toml` é o arquivo principal de configuração do pacote. Altere a
-seção `[tool.poetry]`.
-
-A estrutura é configurada com um mínimo de funcionalidades para obter bons resultados,
-mas talvez você queira melhorar a configuração conforme compreender as ferramentas.
-
-A configuração de pacotes é feita com Poetry ao invés de pip.
-
+Download this project from the following GitHub repository:
 ```bash
-# ative o virtual environment
-cd pasta_projeto
-poetry shell
-
-# instalar pacotes do projeto
-poetry install
-
-# adicione uma biblioteca necessária
-poetry add nome_biblioteca
-# o pacote será adicionado em [tool.poetry.dependencies] de pyproject.toml
-
-# caso queira adicionar uma biblioteca necessária para desenvolvimento e não para uso
-# do pacote
-poetry add add --group dev nome_biblioteca
-
-# Dica: ative o ambiente virtual e depois chame o IDE (e.g. code .) para o encontrar
+poetry add git+https://github.com/fico-ita/po_245_2023_S2_T5.git
 ```
 
-Ao contrário do tradicional, neste configuração, o código fonte pode ser encontrado
-dentro da pasta (pacote python) `fico`. A documentação na pasta `docs`. Caso desejar,
-exclua o `main.py`, que é apenas um script dummy.
-
-Note que não há testes nesta estrutura, o que é crucial, mas que não é exigido neste
-trabalho acadêmico.
-
-Esta estrutura exige python 3.11. Talvez tenha que o instalar, assim como outras
-ferramentas e pacotes. Adicionalmente, também já está incluso uma pequena configuração
-para o vscode.
-
-### Commits
-
-Antes de começar a fazer commits, inicialize a configuração do `pre-commit`.
-
+Get FICO's stocks data from the GitHub below. Copy folders `dataset` and `modules` to
+directory `po_245_2023_S2_T5`.
 ```bash
-# Para fazer, use o comando
-pre-commit install
+poetry add git+https://github.com/fico-ita/template_projetos.git
 ```
 
-Ao fazer commits, caso receba alguma mensagem de erro, pode-se executar apenas o id que
-resultou em erro.
-Por exemplo, se o id `fix-encoding-pragma` resultou em erro
+### Requirements
 
-```bash
-# execute apenas esta verificação
-pre-commit run fix-encoding-pragma
+Python 3.11 or higher is required. Ensure the required libraries are installed
 
-# analise as alterações feitas nos arquivos e mensagem de erro
-# faça stage das alternações
-git add file_name
+- `numpy`
+- `pandas`
+- `statsmodels`
+- `QuantStats`
 
-# verifique novamente
-pre-commit run fix-encoding-pragma
-
-# se tudo der certo, pode tentar o commit novamente
+### Example
+    ```python
+        >>>#FICO Load Data module
+        >>>from modules.load_data import load_data
+        >>>dict_data = load_data()
+        >>>
+        >>>#Stocks Portfolio Construction Based on a Meta-Labeling ML Approach
+        >>>from example.strategy_MetaLabeling import strategy_meta_labeling_r04
+        >>>
+        >>>Portifolio = strategy_meta_labeling_r04(dict_data, t = 2000, size = 10, window_size= 500)
+        >>>Portifolio
+                    ticker  weights        
+        date                        
+        2019-05-11  ALB     0.101264
+        2019-05-11  REGN    0.101264
+        2019-05-11  MYL     0.101264
+        2019-05-11  BKNG    0.100882
+        2019-05-11  ADI     0.100286
+        2019-05-11  PHM     0.099938
+        2019-05-11  AES     0.099651
+        2019-05-11  PXD     0.098805
+        2019-05-11  WELL    0.098347
+        2019-05-11  FDX     0.098298
 ```
 
-### Documentação
 
-Veja `docs` para servir a documentação.
+## Documentation
 
-Um bom exemplo de Docstring no formato Google é o
-[Napoleon's documentation](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+The documentation is available on [GitHub](
+https://github.com/fico-ita/po_245_2023_S2_T5/tree/main/docs
+)
 
-Veja as [seções docstrings na extensão Napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
+## License
 
-[Guia Khan](https://github.com/Khan/style-guides/blob/master/style/python.md#docstrings)
-sobre Docstring Google.
+[Apache License 2.0](LICENSE)
 
-## Git
+## Citation
 
-É aconselhável o uso do git utilizando o fluxo de trabalho conhecido como [Trunk Based
-Development (TBD)](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development),
-i.e., pequenos incrementos, ao invés de gitflow.
+Since this project is research based, it is important to cite it in your work.
+To cite this project, use the following reference:
 
-## Licença
-
-Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um
-mínimo de qualidade. Inclua as licenças sobre os dados, quando houver, lembrando que
-os dados não devem ter controle de versão, ou seja, não os adicione em uma pasta do
-projeto. Informe seus links de acesso.
-
-## Agradecimento
-
-Escolha um bom nome de projeto e adicione os logos dos apoiadores para deixar sua
-documentação com uma imagem mais profissional.
-
-## Como citar
-
-Copie aqui a forma de citação do software em formato de desejar e inclua o arquivo
-[CITATION.cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) no projeto.
-
-Caso tenha, adicione também a citação do paper conceitual sobre a solução.
-
-Inclua também sua referência ao FICO.
+### BibTeX
+```bibtex
+@misc{feitoza2023finance,
+    author = {Feitoza, A. P.},
+    title = {Stocks Portfolio Construction Based on a Meta-Labeling ML Approach},
+    year = {2023},
+    DOI = {10.5281/zenodo.9990001},
+    publisher = {Zenodo},
+    url = {https://doi.org/10.5281/zenodo.9990001} [TBD]
+}
+```
+### APA
+```text
+Feitoza, A. P.(2023), Stocks Portfolio Construction Based on a Meta-Labeling ML Approach.
+Zenodo. https://doi.org/10.5281/zenodo.9990001 [TBD]
+```

@@ -40,9 +40,9 @@ For further details on H&T's Meta-Labeling Architecture refer to my white paper 
 
 ## 3. Reproducing and Extending TH Firm's Approach
 
-The journey began with replicating TH firm's Meta-Labeling strategy, which using synthetic 
-stock return data. Its primary model is a simple mommentum strategy (predicted direction 
-is same as the previous observed one). The target variable (the meta-label) of the secondary 
+The journey began with replicating TH firm's Meta-Labeling strategy, which uses synthetic 
+stock return data. Its primary model is a simple momentum strategy (predicted direction 
+is the same as the previous observed one). The target variable (the meta-label) of the secondary 
 model is “buy” if the next training return is positive and its features are the last three returns.
 
 The resulting dataframe is used to train a logistic regression classifier (secondary model) 
