@@ -66,7 +66,7 @@ the same results as in reference **[2]** was obtained:
 
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
+    <img src="../docs/images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
 </div>
 
 This initial step aimed at not only comprehending the methodology but also 
@@ -92,14 +92,14 @@ the creation of the final training dataset tailored for the secondary model.
 
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-4.jpg" alt="Feature_Engineering" width="70%">
+    <img src="../docs/images/Colab2-4.jpg" alt="Feature_Engineering" width="70%">
 </div>
 
 
 ## 5.Portfolio Construction Pipeline (`under construction`)
 
 <div style="text-align: center;">
-    <img src="../images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
+    <img src="../docs/images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
 </div>
 
 
@@ -115,7 +115,7 @@ These results offered insights into the portfolio's performance, risk-adjusted r
 model validation metrics. Notably, the portfolio exhibited 
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-6.jpg" alt="Initial Results" width="90%">
+    <img src="../docs/images/Colab2-6.jpg" alt="Initial Results" width="90%">
 </div>
 
 
@@ -123,7 +123,7 @@ model validation metrics. Notably, the portfolio exhibited
 their implications; include only primary model performance].
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-5.jpg" alt="Initial Results" width="70%">
+    <img src="../docs/images/Colab2-5.jpg" alt="Initial Results" width="70%">
 </div>
 
 
