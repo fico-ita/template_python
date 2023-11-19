@@ -31,7 +31,7 @@ optimizing portfolio performance. The picture below illustrates the interconnect
 
 
 <div style="text-align:center;">
-    <img src="../images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
+    <img src="../docs/images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
 </div>
 
 
