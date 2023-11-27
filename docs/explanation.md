@@ -36,6 +36,7 @@ the primary and secondary models **[2]**.
 </div>
 
 
+
 For further details on H&T's Meta-Labeling Architecture refer to my white paper [Stocks Portfolio Construction Based on Meta-Labeling Machine Learning](materials/ITA_PO245_WhitePaper-IEEE_Access_LaTeX_template_AfonsoFeitoza.pdf).
 
 
@@ -64,6 +65,8 @@ Cumulative Distribution Function (ECDF) serves this purpose in a simple manner (
     <img src="../docs/images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
 </div>
 
+
+
 Following the procedures outlined by H&T in their [GitHub](https://github.com/hudson-and-thames/meta-labeling/tree/master/theory_and_framework), 
 the same results as in reference **[2]** was obtained:
 
@@ -71,6 +74,8 @@ the same results as in reference **[2]** was obtained:
 <div style="text-align:center;">
     <img src="../docs/images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
 </div>
+
+
 
 This initial step aimed at not only comprehending the methodology but also 
 ensuring accuracy in the implementation. Upon successfully replicating the results, confidence 
@@ -98,12 +103,15 @@ the creation of the final training dataset tailored for the secondary model.
 </div>
 
 
+
 ## 5.Portfolio Construction Pipeline
 
 
 <div style="text-align: center;">
     <img src="../docs/images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
 </div>
+
+
 
 As mentioned in section [Reference](reference.md), the project pipeline is organized 
 into three main blocks:
@@ -126,6 +134,7 @@ the next day and to derive associated probabilities.
 </div>
 
 
+
 ### 5.2. Position Sizing
 
 In this phase, position sizes for each stock are calculated based on the accuracy probability. 
@@ -139,6 +148,8 @@ to determine the position size.
 <div style="text-align:center;">
     <img src="../docs/images/Pipeline_02.jpg" alt="Position Sizing" width="100%">
 </div>
+
+
 
 ### 5.3. Portfolio Construction Strategy
 
@@ -167,6 +178,7 @@ Figure below of an extract of this TearSheet
 </div>
 
 
+
 The portfolio's performance significantly lagged behind the benchmark across all metrics. 
 This raised concerns regarding the practicality of applying H&T's approach, originally 
 devised for synthetic data, to real stock data. Their methodology is structured as a 
@@ -188,6 +200,7 @@ data, reproduced from the figure in section 3 for convenience.
     <img src="../docs/images/Explanation-06.01.jpg" alt="Initial Results" width="100%">
 </div>
 
+
 Unlike the behavior observed with synthetic data, where there was a clear improvement in 
 the secondary model's performance compared to the primary one, there was no improvement 
 when real stocks data were used. In order to ascertain whether that is due to limitations 
@@ -202,6 +215,8 @@ presented in the picture below.
 <div style="text-align:center;">
     <img src="../docs/images/Explanation-06.02.jpg" alt="Initial Results" width="70%">
 </div>
+
+
 
 Despite employing more advanced models, the picture indicates no discernible improvement 
 from the primary model to these secondary models when using real stock data. The suspicion 
