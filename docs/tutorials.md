@@ -79,3 +79,13 @@ here to learn, apply, or innovate, we welcome you to the FICO-ITA experience. Ma
 exploration be insightful and your financial endeavors prosperous!🌟
 
 
+### Jupyter Tutorial
+
+You can access the Jupyter notebook for this project at
+[MetaLabeling.](tutorials/MetaLabeling_Project.ipynb).
+
+Note: To ensure proper functionality and avoid duplicating FICO's stocks data, please follow 
+the directory structure outlined in the  [Installation](how-to-guides.md#installation) 
+ section of the How-To Guides.
+
+
