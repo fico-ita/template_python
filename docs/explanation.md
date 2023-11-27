@@ -30,7 +30,6 @@ optimizing portfolio performance. The picture below illustrates the interconnect
 the primary and secondary models **[2]**.
 
 
-<! ../docs/images/Meta-Labeling_Architecture.jpg"  >
 
 <div style="text-align:center;">
     <img src="../docs/images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
@@ -60,7 +59,6 @@ class. The idea is to assign larger position sizes for higher true positive prob
 Although it does not reflect the optimal position sizing [3], the use of Empirical 
 Cumulative Distribution Function (ECDF) serves this purpose in a simple manner (see picture below).
 
-<! ../docs/images/Colab2-1.jpg" >
 
 <div style="text-align:center;">
     <img src="../docs/images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
@@ -69,7 +67,6 @@ Cumulative Distribution Function (ECDF) serves this purpose in a simple manner (
 Following the procedures outlined by H&T in their [GitHub](https://github.com/hudson-and-thames/meta-labeling/tree/master/theory_and_framework), 
 the same results as in reference **[2]** was obtained:
 
-<! ../docs/images/Colab2-3.jpg >
 
 <div style="text-align:center;">
     <img src="../docs/images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
@@ -95,7 +92,6 @@ test and training sets. Notably, the training dataset for the secondary model co
 solely of datapoints where the primary model signal is positive. This process results in 
 the creation of the final training dataset tailored for the secondary model.
 
-<! ../docs/images/Colab2-4.jpg >
 
 <div style="text-align:center;">
     <img src="../docs/images/Colab2-4.jpg" alt="Feature_Engineering" width="70%">
@@ -104,7 +100,6 @@ the creation of the final training dataset tailored for the secondary model.
 
 ## 5.Portfolio Construction Pipeline
 
-<! ../docs/images/PO245.Fluxograma-Horizontal.jpg >
 
 <div style="text-align: center;">
     <img src="../docs/images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
@@ -166,7 +161,6 @@ comprehensive [TearSheet](materials/TearSheet.html).These results offered insigh
 the portfolio's performance, risk-adjusted returns, and model validation metrics. See the 
 Figure below of an extract of this TearSheet
 
-<! ../docs/images/Colab2-6.jpg" >
 
 <div style="text-align:center;">
     <img src="../docs/images/Colab2-6.jpg" alt="Initial Results" width="90%">
