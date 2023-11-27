@@ -33,7 +33,7 @@ the primary and secondary models **[2]**.
 <! ../docs/images/Meta-Labeling_Architecture.jpg"  >
 
 <div style="text-align:center;">
-    <img src="../images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
+    <img src="../docs/images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
 </div>
 
 
@@ -63,7 +63,7 @@ Cumulative Distribution Function (ECDF) serves this purpose in a simple manner (
 <! ../docs/images/Colab2-1.jpg" >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
+    <img src="../docs/images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
 </div>
 
 Following the procedures outlined by H&T in their [GitHub](https://github.com/hudson-and-thames/meta-labeling/tree/master/theory_and_framework), 
@@ -72,7 +72,7 @@ the same results as in reference **[2]** was obtained:
 <! ../docs/images/Colab2-3.jpg >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
+    <img src="../docs/images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
 </div>
 
 This initial step aimed at not only comprehending the methodology but also 
@@ -98,7 +98,7 @@ the creation of the final training dataset tailored for the secondary model.
 <! ../docs/images/Colab2-4.jpg >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-4.jpg" alt="Feature_Engineering" width="70%">
+    <img src="../docs/images/Colab2-4.jpg" alt="Feature_Engineering" width="70%">
 </div>
 
 
@@ -107,7 +107,7 @@ the creation of the final training dataset tailored for the secondary model.
 <! ../docs/images/PO245.Fluxograma-Horizontal.jpg >
 
 <div style="text-align: center;">
-    <img src="../images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
+    <img src="../docs/images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
 </div>
 
 As mentioned in section [Reference](reference.md), the project pipeline is organized 
@@ -127,7 +127,7 @@ the next day and to derive associated probabilities.
 
 
 <div style="text-align:center;">
-    <img src="../images/Pipeline_01.jpg" alt="Individual Stock MetaLabeling Application" width="100%">
+    <img src="../docs/images/Pipeline_01.jpg" alt="Individual Stock MetaLabeling Application" width="100%">
 </div>
 
 
@@ -142,7 +142,7 @@ to determine the position size.
 
 
 <div style="text-align:center;">
-    <img src="../images/Pipeline_02.jpg" alt="Position Sizing" width="100%">
+    <img src="../docs/images/Pipeline_02.jpg" alt="Position Sizing" width="100%">
 </div>
 
 ### 5.3. Portfolio Construction Strategy
@@ -153,7 +153,7 @@ Individual sizes are normalized to ensure they collectively sum up to one.
 
 
 <div style="text-align:center;">
-    <img src="../images/Pipeline_03.jpg" alt="Portfolio Construction Strategy" width="100%">
+    <img src="../docs/images/Pipeline_03.jpg" alt="Portfolio Construction Strategy" width="100%">
 </div>
 
 
@@ -169,7 +169,7 @@ Figure below of an extract of this TearSheet
 <! ../docs/images/Colab2-6.jpg" >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-6.jpg" alt="Initial Results" width="90%">
+    <img src="../docs/images/Colab2-6.jpg" alt="Initial Results" width="90%">
 </div>
 
 
@@ -191,7 +191,7 @@ illustrates the Sharpe Ratio outcomes using real stock data alongside the synthe
 data, reproduced from the figure in section 3 for convenience.
 
 <div style="text-align:center;">
-    <img src="../images/Explanation-06.01.jpg" alt="Initial Results" width="100%">
+    <img src="../docs/images/Explanation-06.01.jpg" alt="Initial Results" width="100%">
 </div>
 
 Unlike the behavior observed with synthetic data, where there was a clear improvement in 
@@ -206,7 +206,7 @@ presented in the picture below.
 
 
 <div style="text-align:center;">
-    <img src="../images/Explanation-06.02.jpg" alt="Initial Results" width="70%">
+    <img src="../docs/images/Explanation-06.02.jpg" alt="Initial Results" width="70%">
 </div>
 
 Despite employing more advanced models, the picture indicates no discernible improvement 
