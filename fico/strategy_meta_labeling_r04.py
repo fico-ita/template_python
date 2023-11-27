@@ -8,7 +8,7 @@ Block-1: Inputs
       from which a time series of stocks' log returns is extracted.
 
 Block-2: Individual Stock MetaLabeling Application
-    - For each stock in the input time series, this block of the pipeline
+    - For each stock in the log-return time series, this block of the pipeline
       determines the next day's direction prediction (position side) and its accuracy
       probability. It uses Logistic Regression within a MetaLabeling framework to
       make predictions.
@@ -240,8 +240,8 @@ def D_strategy_meta_labeling(data: pd.DataFrame, t: int, size: int, window_size:
         >>>#Stocks Portfolio Construction Based on a Meta-Labeling ML Approach
         >>>from example.strategy_MetaLabeling import strategy_meta_labeling_r04
         >>>
-        >>>Portifolio = strategy_meta_labeling_r04(dict_data, t = 2000, size = 10, window_size= 500)
-        >>>Portifolio
+        >>>Portfolio = strategy_meta_labeling_r04(dict_data, t = 2000, size = 10, window_size= 500)
+        >>>Portfolio
                     ticker  weights        
         date                        
         2019-05-11  ALB     0.101264

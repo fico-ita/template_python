@@ -2,7 +2,7 @@
 
 ## Building a Stock Portfolio Using Meta-Labeling ML Approach
 
-Welcome to the Meta-Labeling Portifolio Strategy tutorial! 📈
+Welcome to the Meta-Labeling Portfolio Strategy tutorial! 📈
 
 In this guide, we'll walk you through the practical steps to construct a diversified 
 stock portfolio using the Meta-Labeling approach developed within the FICO-ITA project.
@@ -45,7 +45,7 @@ dict_data = load_data()
 #Stocks Portfolio Construction Based on a Meta-Labeling ML Approach
 from fico.strategy_meta_labeling_r04 import D_strategy_meta_labeling
 
-Portifolio = D_strategy_meta_labeling(dict_data, t = 2000, size = 10, window_size= 500)
+Portfolio = D_strategy_meta_labeling(dict_data, t = 2000, size = 10, window_size= 500)
 ```
 
 ### Step 4: Reviewing Results

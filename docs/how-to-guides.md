@@ -47,10 +47,10 @@ With the above structure in place, the package can be imported and executed as f
 
 ```python
 from fico.strategy_meta_labeling_r04 import D_strategy_meta_labeling
-Portifolio = D_strategy_meta_labeling(dict_data, t = 2000, size = 10, window_size= 500)
+Portfolio = D_strategy_meta_labeling(dict_data, t = 2000, size = 10, window_size= 500)
 ```
 
-This way you should be able to get the following next-day[^1] portifolio of *10* stocks with their 
+This way you should be able to get the following next-day[^1] portfolio of *10* stocks with their 
 allocation weights:
 
 ```bash

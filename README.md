@@ -43,8 +43,8 @@ Python 3.11 or higher is required. Ensure the required libraries are installed
         >>>#Stocks Portfolio Construction Based on a Meta-Labeling ML Approach
         >>>from example.strategy_MetaLabeling import strategy_meta_labeling_r04
         >>>
-        >>>Portifolio = strategy_meta_labeling_r04(dict_data, t = 2000, size = 10, window_size= 500)
-        >>>Portifolio
+        >>>Portfolio = strategy_meta_labeling_r04(dict_data, t = 2000, size = 10, window_size= 500)
+        >>>Portfolio
                     ticker  weights        
         date                        
         2019-05-11  ALB     0.101264
