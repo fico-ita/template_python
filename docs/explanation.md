@@ -30,7 +30,7 @@ optimizing portfolio performance. The picture below illustrates the interconnect
 the primary and secondary models **[2]**.
 
 
-<! ../docs/images/Meta-Labeling_Architecture.jpg" >
+<! ../docs/images/Meta-Labeling_Architecture.jpg"  >
 
 <div style="text-align:center;">
     <img src="../images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
