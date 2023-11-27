@@ -221,7 +221,7 @@ next steps:
  - Evaluate different sizing criteria.
 
 Moreover, future works could leverage the insights gained from this project to apply the 
-meta-labeling framework to various primary strategies."
+meta-labeling framework to various primary strategies.
 
 ## 8. References
 
