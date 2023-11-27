@@ -30,11 +30,11 @@ optimizing portfolio performance. The picture below illustrates the interconnect
 the primary and secondary models **[2]**.
 
 
-<! ../docs/images/Meta-Labeling_Architecture.jpg" >
 
 <div style="text-align:center;">
-    <img src="../images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
+    <img src="../docs/images/Meta-Labeling_Architecture.jpg" alt="Meta-Labeling Architecture" width="80%">
 </div>
+
 
 
 For further details on H&T's Meta-Labeling Architecture refer to my white paper [Stocks Portfolio Construction Based on Meta-Labeling Machine Learning](materials/ITA_PO245_WhitePaper-IEEE_Access_LaTeX_template_AfonsoFeitoza.pdf).
@@ -60,20 +60,22 @@ class. The idea is to assign larger position sizes for higher true positive prob
 Although it does not reflect the optimal position sizing [3], the use of Empirical 
 Cumulative Distribution Function (ECDF) serves this purpose in a simple manner (see picture below).
 
-<! ../docs/images/Colab2-1.jpg" >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
+    <img src="../docs/images/Colab2-1.jpg" alt="Empirical Cummulative Distribution Function" width="80%">
 </div>
+
+
 
 Following the procedures outlined by H&T in their [GitHub](https://github.com/hudson-and-thames/meta-labeling/tree/master/theory_and_framework), 
 the same results as in reference **[2]** was obtained:
 
-<! ../docs/images/Colab2-3.jpg >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
+    <img src="../docs/images/Colab2-3.jpg" alt="Reproduction of articles results" width="110%">
 </div>
+
+
 
 This initial step aimed at not only comprehending the methodology but also 
 ensuring accuracy in the implementation. Upon successfully replicating the results, confidence 
@@ -95,20 +97,21 @@ test and training sets. Notably, the training dataset for the secondary model co
 solely of datapoints where the primary model signal is positive. This process results in 
 the creation of the final training dataset tailored for the secondary model.
 
-<! ../docs/images/Colab2-4.jpg >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-4.jpg" alt="Feature_Engineering" width="70%">
+    <img src="../docs/images/Colab2-4.jpg" alt="Feature_Engineering" width="60%">
 </div>
+
 
 
 ## 5.Portfolio Construction Pipeline
 
-<! ../docs/images/PO245.Fluxograma-Horizontal.jpg >
 
 <div style="text-align: center;">
-    <img src="../images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
+    <img src="../docs/images/PO245.Fluxograma-Horizontal.jpg" alt="Project Pipeline" style="margin-top: 20px;" />
 </div>
+
+
 
 As mentioned in section [Reference](reference.md), the project pipeline is organized 
 into three main blocks:
@@ -127,8 +130,9 @@ the next day and to derive associated probabilities.
 
 
 <div style="text-align:center;">
-    <img src="../images/Pipeline_01.jpg" alt="Individual Stock MetaLabeling Application" width="100%">
+    <img src="../docs/images/Pipeline_01.jpg" alt="Individual Stock MetaLabeling Application" width="100%">
 </div>
+
 
 
 ### 5.2. Position Sizing
@@ -142,8 +146,10 @@ to determine the position size.
 
 
 <div style="text-align:center;">
-    <img src="../images/Pipeline_02.jpg" alt="Position Sizing" width="100%">
+    <img src="../docs/images/Pipeline_02.jpg" alt="Position Sizing" width="100%">
 </div>
+
+
 
 ### 5.3. Portfolio Construction Strategy
 
@@ -153,7 +159,7 @@ Individual sizes are normalized to ensure they collectively sum up to one.
 
 
 <div style="text-align:center;">
-    <img src="../images/Pipeline_03.jpg" alt="Portfolio Construction Strategy" width="100%">
+    <img src="../docs/images/Pipeline_03.jpg" alt="Portfolio Construction Strategy" width="100%">
 </div>
 
 
@@ -166,11 +172,11 @@ comprehensive [TearSheet](materials/TearSheet.html).These results offered insigh
 the portfolio's performance, risk-adjusted returns, and model validation metrics. See the 
 Figure below of an extract of this TearSheet
 
-<! ../docs/images/Colab2-6.jpg" >
 
 <div style="text-align:center;">
-    <img src="../images/Colab2-6.jpg" alt="Initial Results" width="90%">
+    <img src="../docs/images/Colab2-6.jpg" alt="Initial Results" width="90%">
 </div>
+
 
 
 The portfolio's performance significantly lagged behind the benchmark across all metrics. 
@@ -191,8 +197,9 @@ illustrates the Sharpe Ratio outcomes using real stock data alongside the synthe
 data, reproduced from the figure in section 3 for convenience.
 
 <div style="text-align:center;">
-    <img src="../images/Explanation-06.01.jpg" alt="Initial Results" width="100%">
+    <img src="../docs/images/Explanation-06.01.jpg" alt="Initial Results" width="100%">
 </div>
+
 
 Unlike the behavior observed with synthetic data, where there was a clear improvement in 
 the secondary model's performance compared to the primary one, there was no improvement 
@@ -206,8 +213,10 @@ presented in the picture below.
 
 
 <div style="text-align:center;">
-    <img src="../images/Explanation-06.02.jpg" alt="Initial Results" width="70%">
+    <img src="../docs/images/Explanation-06.02.jpg" alt="Initial Results" width="70%">
 </div>
+
+
 
 Despite employing more advanced models, the picture indicates no discernible improvement 
 from the primary model to these secondary models when using real stock data. The suspicion 
@@ -215,7 +224,7 @@ arises that relying solely on the last three stocks' returns might not provide s
 information for the secondary model to enhance directional predictions. This hypothesis 
 will be verified in the next steps of the project.
 
-## 7. Intended Improvements and Future Work
+## 7. Intended Improvements and Future Works
 
 As with any evolving strategy, there exist opportunities for enhancement and refinement. 
 Plans are underway to further optimize the Meta-Labeling strategy throught the following 
@@ -227,7 +236,7 @@ next steps:
  - Evaluate different sizing criteria.
 
 Moreover, future works could leverage the insights gained from this project to apply the 
-meta-labeling framework to various primary strategies."
+meta-labeling framework to various primary strategies.
 
 ## 8. References
 
