@@ -94,7 +94,7 @@ the creation of the final training dataset tailored for the secondary model.
 
 
 <div style="text-align:center;">
-    <img src="../docs/images/Colab2-4.jpg" alt="Feature_Engineering" width="70%">
+    <img src="../docs/images/Colab2-4.jpg" alt="Feature_Engineering" width="60%">
 </div>
 
 
