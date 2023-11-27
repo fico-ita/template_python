@@ -209,7 +209,7 @@ arises that relying solely on the last three stocks' returns might not provide s
 information for the secondary model to enhance directional predictions. This hypothesis 
 will be verified in the next steps of the project.
 
-## 7. Intended Improvements and Future Work
+## 7. Intended Improvements and Future Works
 
 As with any evolving strategy, there exist opportunities for enhancement and refinement. 
 Plans are underway to further optimize the Meta-Labeling strategy throught the following 
