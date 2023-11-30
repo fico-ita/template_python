@@ -23,13 +23,27 @@ We highlight key decisions made during the solution implementation:
 The component diagram below illustrates the structure of the proposed strategy:
 
 ```mermaid
-flowchart LR
-    A[LSTM Stock Prediction Project] -->|Stock Data Analysis| B[Data Module];
-    B -->|Stock Selection| C[Initial Exploratory Analysis Done];
-    C -->|Model Preparation| D[Model Prepared];
-    D -->|Stock Trend Prediction| E[Predicted Returns of Selected Stocks];
-    E -->|Portfolio Construction| F[Mount Wallet];
+graph TD
+    subgraph "Stock Selection Strategy"
+        A(Data Collection) -->|Data Preprocessing| B(Data Processing)
+        B -->|Feature Extraction| C(Feature Engineering)
+        C -->|Model Training| D(Model Development)
+        D -->|Prediction| E(Predictive Model)
+        E -->|1-day ahead prediction| F(Portfolio generation)
+    end
+
+    subgraph "Supporting Modules"
+        G(ComDinheiro Database) -.-> A
+        I(FICO's Project Template Assisting Module) -.-> B
+        I -.-> C
+    end
+
+    subgraph "Backtesting Module"
+        I -.-> K(Forward Backtesting)
+    end
+
 ```
+
 This diagram showcases how modules interact within the LSTM strategy, from data analysis to portfolio construction.
 
 ## Project
