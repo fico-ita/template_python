@@ -18,7 +18,7 @@ We highlight key decisions made during the solution implementation:
 - Modular organization of the code for ease of maintenance and reusability.
 - Stock selection strategy based on volatility and momentum analysis.
 
-### Component Diagram - Diagram Visualization Bug
+### Component Diagram
 
 The component diagram below illustrates the structure of the proposed strategy:
 
