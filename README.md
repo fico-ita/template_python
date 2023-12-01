@@ -1,6 +1,6 @@
 # Estrutura FICO
 
-Documentação do pacote XXX no Github.
+Documentação do pacote lstm_strategy no Github.
 Utilize o README.md mais como um ponteiro para a documentação oficial e instruções
 pertinentes.
 
@@ -25,15 +25,12 @@ Esta estrutura utiliza basicamente
 - Ruff e Black são usados para estilo de código
 - Pre-commit é utilizado para verificações antes de `commit`
 
-Lembre-se que o pacote deve conter a parte reproduzível de seu projeto. O uso deve ser
-construído como um dos exemplos ou em outro repositório, que utiliza este pacote.
 ### Por onde começar
 
 O arquivo `pyproject.toml` é o arquivo principal de configuração do pacote. Altere a
 seção `[tool.poetry]`.
 
-A estrutura é configurada com um mínimo de funcionalidades para obter bons resultados,
-mas talvez você queira melhorar a configuração conforme compreender as ferramentas.
+A estrutura é configurada com um mínimo de funcionalidades para obter bons resultados.
 
 A configuração de pacotes é feita com Poetry ao invés de pip.
 
@@ -59,9 +56,6 @@ poetry add add --group dev nome_biblioteca
 Ao contrário do tradicional, neste configuração, o código fonte pode ser encontrado
 dentro da pasta (pacote python) `fico`. A documentação na pasta `docs`. Caso desejar,
 exclua o `main.py`, que é apenas um script dummy.
-
-Note que não há testes nesta estrutura, o que é crucial, mas que não é exigido neste
-trabalho acadêmico.
 
 Esta estrutura exige python 3.11. Talvez tenha que o instalar, assim como outras
 ferramentas e pacotes. Adicionalmente, também já está incluso uma pequena configuração
@@ -98,37 +92,35 @@ pre-commit run fix-encoding-pragma
 
 Veja `docs` para servir a documentação.
 
-Um bom exemplo de Docstring no formato Google é o
-[Napoleon's documentation](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
-
-Veja as [seções docstrings na extensão Napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
-
-[Guia Khan](https://github.com/Khan/style-guides/blob/master/style/python.md#docstrings)
-sobre Docstring Google.
-
-## Git
-
-É aconselhável o uso do git utilizando o fluxo de trabalho conhecido como [Trunk Based
-Development (TBD)](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development),
-i.e., pequenos incrementos, ao invés de gitflow.
-
 ## Licença
 
-Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um
-mínimo de qualidade. Inclua as licenças sobre os dados, quando houver, lembrando que
-os dados não devem ter controle de versão, ou seja, não os adicione em uma pasta do
-projeto. Informe seus links de acesso.
+- Licença de código: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- Fonte de dados: [Stock Market, Funds, Fixed Income and Asset Consolidation Data Analysis](https://www.comdinheiro.com.br/)
+- Grupo de suporte: [FICO](https://fico-ita.github.io/)
 
 ## Agradecimento
+Nós, integrantes do projeto LSTM & Low Volatility Quant, agradecemos:
 
-Escolha um bom nome de projeto e adicione os logos dos apoiadores para deixar sua
-documentação com uma imagem mais profissional.
+- O suporte da plataforma **comdinheiro** da **Nelogica** em providenciar os dados de preços históricos das ações usados neste projeto.
+
+![comdinheiro Logo](./comdinheiroinvest---versao-escura.png)
+
+- O suporte prático e intelectual dado por todo os indivíduos-chave existentes no grupo **FICO-ITA**.
+
+![FICO-ITA Logo](./FICO_ITA_logo.png)
 
 ## Como citar
 
-Copie aqui a forma de citação do software em formato de desejar e inclua o arquivo
-[CITATION.cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) no projeto.
-
-Caso tenha, adicione também a citação do paper conceitual sobre a solução.
-
-Inclua também sua referência ao FICO.
+Inclua nas citações de seu projeto o seguinte:
+```python
+authors:
+- family-names: "Bustos"
+  given-names: "Victor"
+  LinkedIn: "https://www.linkedin.com/in/victoropb/"
+- family-names: "Nunes"
+  given-names: "Marcus"
+  LinkedIn: "https://www.linkedin.com/in/marcusganunes/"
+title: "Low Volatility and High Momentum Investment Strategy"
+version: 1.0
+url: "https://github.com/fico-ita/po_245_2023_S2_T4/tree/main"
+```

@@ -1,6 +1,5 @@
-This part of the project documentation focuses on an **information-oriented** approach.
-Use it as a reference for the technical implementation of the `calculator` project code.
+Technical implementation of the `lstm_strategy` project code.
 
-## Calculations
+## Portfolio Construction
 
-::: fico.calculations
+::: fico.lstm_strategy
