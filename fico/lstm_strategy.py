@@ -1,28 +1,39 @@
-"""Provide several sample math calculations.
+"""Provides technical details of the proposed low-volatility-momentum strategy.
 
-This module allows the user to make mathematical calculations.
+This module allows the user to make a wallet based on said strategy.
 
 The module contains the following functions:
 
-- `add(a, b)` - Returns the sum of two numbers.
-- `subtract(a, b)` - Returns the difference of two numbers.
-- `multiply(a, b)` - Returns the product of two numbers.
-- `divide(a, b)` - Returns the quotient of two numbers.
+- `initial_analysis(dict_data, stdout)` - Select top 10 stocks based on stocks' momentum
+    scores and volatilities.
+- `df_to_windowed_df(dataframe, first_date, last_date, n)` - Transform the stocks
+    dataframes in 60-day windowed dataframes.
+- `lstm_strategy(dict_data, t, stdout, show_real_returns)` - Executes the proposed
+    low-volatility-momentum strategy
+- `mount_wallet(sel_stocks, dfs_dict, date, stdout, show_real_returns)` - Returns
+    weights for mounting the stocks wallet.
+- `optimize_model(scaled_X_train, scaled_y_train, scaled_X_val, scaled_y_val)` - Choose
+    the best number of Dense layers and neurons in each for the neural network.
+- `prepare_model_data(sel_stocks, t, stdout)` - Creates the data shape for model.
+- `train_model(stock, dfs_dict, show_real_returns, stdout)` - Trains model to find best
+    Dense layers and neurons numbers combination for each neural network.
+- `str_to_datetime(s)` - Transforms date in string format to datetime format.
+- `windowed_df_to_date_X_y(windowed_dataframe)` - Transform the stocks dataframes in
+    60-day windowed dataframes.
 
 Examples:
     Examples should be written in `doctest` format, and should illustrate how to use the
     function.
 
-    >>> from fico import calculations
-    >>> calculations.add(2, 4)
-    6.0
-    >>> calculations.multiply(2.0, 4.0)
-    8.0
-    >>> from fico.calculations import divide
-    >>> divide(4.0, 2)
-    2.0
+    >>> from fico.lstm_strategy import initial_analysis, prepare_model_data
+    >>> data_dict = load_data()  # Assuming load_data is imported
+    *image of data_dict*
+    >>> selected_stocks = initial_analysis(data_dict)
+    *image of selected_stocks*
+    >>> from fico.lstm_strategy import mount_wallet
+    >>> portfolio = mount_wallet(selected_stocks, model_data, show_real_returns = True)
+    *image of portfolio*
 """
-
 
 import copy
 import datetime
@@ -38,16 +49,26 @@ from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.losses import Huber
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
+# """Transform the stocks dataframes in 60-day windowed dataframes.
 
+#     Args:
+#       Dataframe: stock dataframe
+#       String: initial date
+#       String: final date
 
-def initial_analysis(dict_data, stdout=True):
+#     Returns:
+#       Dataframe: 60-day windowed dataframe
+#     """
+
+def initial_analysis(dict_data: object, stdout: bool =True):
     """Select top stocks based on stocks' momentum scores analyzed for 3 periods: 1-month momentum, 3-month and
     6-month momentum, compounded with low volatility filtering. A 'low-volatility-momentum' strategy.
 
-    Args: dict
+    Args:
+        Dict: Dictionary with historical stocks data.
 
     Returns:
-    Array: Selected stocks.
+        Array: Selected stocks.
     """
     log_returns = np.log(dict_data["prices"]).diff().fillna(0)
 
@@ -199,8 +220,7 @@ def prepare_model_data(sel_stocks, t, stdout=True):
     Returns:
       Dictionary: {
         'param1': 60-day windowed dataframes of the selected stocks,
-        'param2': maximum scale for normalizing data
-      }
+        'param2': maximum scale for normalizing data}
     """
     dict_data = load_data()
     df = dict_data["prices"].astype("Float32")
