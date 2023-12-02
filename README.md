@@ -1,4 +1,4 @@
-# FICO T3
+# FICO T5
 
 FICO-ITA is a multidisciplinary interest group in Computational Finance and Systematic Investments
 operating within the ITA, in Brazil. 
