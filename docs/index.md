@@ -1,65 +1,27 @@
-# Bem-vindo ao FICO
+# Welcome to FICO
 
-Leia a documentação do Mkdocs em [mkdocs.org](https://www.mkdocs.org).
 
-## Comandos
-
-* `mkdocs new [dir-name]` - Cria um novo projeto.
-* `mkdocs serve` - Inicia o servidor live-reloading de documentação.
-* `mkdocs build` - Constrói o site da documentação.
-* `mkdocs -h` - Imprime a mensagem de ajuda.
-
-## Estrutura da documentação
-
-    mkdocs.yml    # Arquivo de configuração.
-    docs/
-        index.md  # Página principal da documentação
-        ...       # Outras páginas via markdown, imagens e outros arquivos.
-
-## Organização da documentação
-
-Para a organização da documentação de usuário, baseie-se na proposta de
-[Diátaxis](https://diataxis.fr/), que consiste em 4 classes de documentos:
-
-1. Tutorials
-1. How-To guides
-1. Reference
-1. Explanation
-
-!!! warning
-    Não é obrigatório seguir Diátaxis. Ela serve apenas como guia.
-
-As documentações acima são pensadas para o leitor usuário da solução.
-
-Deve-se ainda considerar a documentação para fins acadêmicos e de engenharia de
-software, i.e., quando quem desenvolve o projeto é o leitor. Caso contrário,
-atualizações podem se tornar impraticáveis.
-
-Esta documentação possui grande intersecção com *Explanation*. A diferença é que o
-público de *Explanation* é o usuário da solução, enquanto na documentação acadêmica e
-para desenvolvimento o público alvo são os desenvolvedores e arquitetos da solução.
-
-Nesta documentação o foco é destacar as tomadas de decisão e organização da solução,
-preferencialmente apesentando um diagrama de componentes da solução e como eles se
-interagem. Em nossa disciplina, iremos incluir o artigo como forma de atingir estes
-objetivos.
-
-## Calculadora FICO
+## Strategy
 
 ::: fico
 
-## Projeto
+## Project
 
-Adicione aqui o pdf do artigo.
+[Link to the strategy article](files/Mestrado.pdf)
 
-# Licença
 
-Similar ao README.md
+## Tearsheet
+[Link to Tear Sheet](files/portPINxIbov.html)
 
-## Agradecimento
+## Acknowledgment
 
-Similar ao README.md
+I would like to express my heartfelt gratitude to professors Vitor Curtis, Elton Sbruzzi, Michel Leles, and Orleans Martins for their unwavering support throughout the development of this work. Their guidance, expertise, and encouragement have been invaluable, shaping the trajectory of my research journey. Their commitment to fostering academic growth and their dedication to providing insightful feedback have played a pivotal role in the successful completion of this project. I am truly fortunate to have had such dedicated mentors, and I am sincerely thankful for their contributions to my academic and professional development.
 
-## Como citar
+## Citations
 
-Similar ao README.md
+D. Easley and M. O’hara. Price, trade size, and information in securities markets. Journal of Financial economics, 19(1):69–90, 1987.
+
+D. Easley and M. O’hara. Time and the process of security price adjustment. The Journal of finance, 47(2):577–605, 1992.
+
+D. Easley, N. M. Kiefer, M. O’hara, and J. B. Paperman. Liquidity, information, and infrequently traded stocks. The Journal of Finance, 51(4):1405–1436, 1996.
+

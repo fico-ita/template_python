@@ -1,39 +1,52 @@
-This part of the project documentation focuses on a
-**problem-oriented** approach. You'll tackle common
-tasks that you might have, with the help of the code
-provided in this project.
-
-## How To Add Two Numbers?
-
-You have two numbers and you need to add them together.
-You're in luck! The `calculator` package can help you
-get this done.
-
-Download the code from this GitHub repository and place
-the `calculator/` folder in the same directory as your
-Python script:
+## How To Estimate PINs?
+Download the code from this GitHub repository and place the `fico/` folder in the same directory as your Python script:
 
     your_project/
     │
-    ├── calculator/
+    ├── fico/
     │   ├── __init__.py
-    │   └── calculations.py
+    │   ├── strategy_simulator.py
+    │   ├── modules/
+    │   └── data/
     │
     └── your_script.py
 
-Inside of `your_script.py` you can now import the
-`add()` function from the `calculator.calculations`
-module:
+In data folder, add CSVs (each one for a stock) containing two columns: vendedor and comprador (seller and buyer). Then run 
 
-    # your_script.py
-    from calculator.calculations import add
+```python3
+from fico.modules import pin_estimation
+pin_estimation.estimate_all_pins()
+```    
 
-After you've imported the function, you can use it to add any two numbers that you need
-to add:
+## How To Select Stocks?
+Run the following code
 
-    # your_script.py
-    from calculator.calculations import add
+```python3
+from fico.modules import stock_selection
+eligible_stocks = stock_selection.filter(data)
+```
 
-    print(add(20, 22))  # OUTPUT: 42.0
+With `data` containing the volume per stock per day.
 
-You're now able to add any two numbers, and you'll always get a `float` as a result.
+## How To Build a Portfolio?
+
+Run the following code
+
+```python3
+from fico.modules import portfolio_build
+portfolios = portfolio_build.build_portfolio(
+    pins,
+    eligible_stocks,
+)
+```
+
+`pins` means the result of the PIN estimation and `eligible_stocks` means the result of the stock selection.
+
+## How To Measure Returns? 
+
+Run:
+```python3
+from fico.modules import returns
+r = returns.calculate_all_portfolios_returns(weights, prices)
+```
+`weights` means the weight of an asset in the portfolio, and `prices` means the prices of the stocks in time series.
