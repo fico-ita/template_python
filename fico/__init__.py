@@ -1,6 +1,5 @@
-"""Realiza cálculos matemáticos com funções próprias.
+"""Modules exported by this package:
 
-Módulos exportados por este pacote:
-
-- `calculations`: Provê várias operações matemáticas
+strategy_meta_labeling_r04.py: Creates a portfolio (stocks and weights) through a pipeline
+based on the MetaLabeling approach.
 """

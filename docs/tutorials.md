@@ -1,15 +1,91 @@
-This part of the project documentation focuses on a **learning-oriented** approach.
-You'll learn how to get started with the code in this project.
+# Tutorials
 
-Expand this section by considering the following points:
+## Building a Stock Portfolio Using Meta-Labeling ML Approach
 
-- Help newcomers with getting started
-- Teach readers about your library by making them write code
-- Inspire confidence through examples that work for everyone, repeatably
-- Give readers an immediate sense of achievement
-- Show concrete examples, no abstractions
-- Provide the minimum necessary explanation
-- Avoid any distractions
+Welcome to the Meta-Labeling Portfolio Strategy tutorial! 📈
 
-!!! warning
-    Faça ao menos 1 tutorial com jupyter notebook.
+In this guide, we'll walk you through the practical steps to construct a diversified 
+stock portfolio using the Meta-Labeling approach developed within the FICO-ITA project.
+
+### Step 0: Prerequisites
+Ensure the required libraries are installed: numpy, pandas, statsmodels, scikit-learn and 
+QuantStats.  If not installed, you can do so by using poetry:
+
+```bash
+poetry add numpy pandas statsmodels scikit-learn mQuantStats
+```
+
+
+### Step 1: Project Setup
+Download the project and stocks data from GitHub:
+
+```bash
+poetry add git+https://github.com/fico-ita/po_245_2023_S2_T5.git
+poetry add git+https://github.com/fico-ita/template_projetos.git
+```
+
+Verify that the directory structure matches the setup provided in [How-to Guides: Installation](how-to-guides.md).🔍
+
+### Step 2: Meta-Labeling Strategy Overview
+Explore the four crucial blocks of the [Meta-Labeling strategy](reference.md):
+
+ - Inputs and Data Preparation📊
+ - Individual Stock MetaLabeling Application📑
+ - Position Sizing📏
+ - Portfolio Construction Strategy🛠️
+
+### Step 3: Executing the Strategy
+Now, let's put this into action:
+
+```python
+#FICO Load Data module
+from modules.load_data import load_data
+dict_data = load_data()
+
+#Stocks Portfolio Construction Based on a Meta-Labeling ML Approach
+from fico.strategy_meta_labeling_r04 import D_strategy_meta_labeling
+
+Portfolio = D_strategy_meta_labeling(dict_data, t = 2000, size = 10, window_size= 500)
+```
+
+### Step 4: Reviewing Results
+Check out the resulting portfolio composition:
+
+```bash
+        ticker  weights        
+        date                        
+        2019-05-11  ALB     0.101264
+        2019-05-11  REGN    0.101264
+        2019-05-11  MYL     0.101264
+        2019-05-11  BKNG    0.100882
+        2019-05-11  ADI     0.100286
+        2019-05-11  PHM     0.099938
+        2019-05-11  AES     0.099651
+        2019-05-11  PXD     0.098805
+        2019-05-11  WELL    0.098347
+        2019-05-11  FDX     0.098298
+```
+### Step 5: Further Exploration
+
+Feel free to experiment with different parameters or extend the strategy. The other documentation 
+sections like [How-To Guides](how-to-guides.md), [Reference](reference.md), and 
+[Explanation](explanation.md) offer deeper insights into the inner workings and possibilities for improvement.🚀
+
+
+### Step 6: Conclusion
+
+This documentation serves as a gateway to the world of meta-Labeling computational finance. Whether you're 
+here to learn, apply, or innovate, we welcome you to the FICO-ITA experience. May your 
+exploration be insightful and your financial endeavors prosperous!🌟
+
+
+### Jupyter Tutorial
+
+You can access the Jupyter notebook for this project at
+[MetaLabeling](tutorials/MetaLabeling_Project.ipynb).
+
+Note: To ensure it runs properly and avoid duplicating FICO's stocks data, please follow 
+the directory structure outlined in the  [Installation](how-to-guides.md#installation) 
+ section of the How-To Guides.
+
+
