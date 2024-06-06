@@ -1,21 +1,25 @@
-# Estrutura FICO
+# Template de um projeto Python
 
-Documentação do pacote XXX no Github.
+No seu repo, utilize este documento para documentar seu pacote XXX no Github.
 Utilize o README.md mais como um ponteiro para a documentação oficial e instruções
 pertinentes.
 
 Não esqueça de preencher as seções *Como citar* e *Agradecimento*, citando
 explicitamente as empresas parceiras que apoiaram a solução.
 
-# TODO
+## Organização
 
-- Falta adicionar testes e log
-- Mudar pasta padrão de código para src
-- Testar empacotamento
+Mostre rapidamente a organização do seu repo, indicando uma breve descrição dos
+diretórios.
 
-## Estrutura
+- `.vscode`: configurações prontas para o dev env via code
+- [`docs`](docs/): diretório com a documentação do pacote. Nesse caso, a documentação em mkdocs.
+- [`fico`](fico/): biblioteca demo
+- `outros`: outros diretórios que seu projeto tiver
 
-Esta estrutura utiliza basicamente
+## Descrição
+
+Este template utiliza:
 
 - Poetry como ferramenta de empacotamento e gerenciador de pacotes
 - [Mkdocs](https://www.mkdocs.org/) para documentação, com template
@@ -26,7 +30,10 @@ Esta estrutura utiliza basicamente
 - Pre-commit é utilizado para verificações antes de `commit`
 
 Lembre-se que o pacote deve conter a parte reproduzível de seu projeto. O uso deve ser
-construído como um dos exemplos ou em outro repositório, que utiliza este pacote.
+construído como um dos exemplos ou em outro repositório, que utiliza este pacote. Neste
+último caso, seu repo de aplicação irá utilizar o repositório de sua biblioteca via
+*submodule* do git.
+
 ### Por onde começar
 
 O arquivo `pyproject.toml` é o arquivo principal de configuração do pacote. Altere a
@@ -35,7 +42,9 @@ seção `[tool.poetry]`.
 A estrutura é configurada com um mínimo de funcionalidades para obter bons resultados,
 mas talvez você queira melhorar a configuração conforme compreender as ferramentas.
 
-A configuração de pacotes é feita com Poetry ao invés de pip.
+A configuração de pacotes é feita com Poetry ao invés de pip. Crie um virtual
+environment novo para o desenvolvimento da sua biblioteca e instale os pacotes
+necessários via Poetry.
 
 ```bash
 # ative o virtual environment
@@ -60,8 +69,7 @@ Ao contrário do tradicional, neste configuração, o código fonte pode ser enc
 dentro da pasta (pacote python) `fico`. A documentação na pasta `docs`. Caso desejar,
 exclua o `main.py`, que é apenas um script dummy.
 
-Note que não há testes nesta estrutura, o que é crucial, mas que não é exigido neste
-trabalho acadêmico.
+Note que não há testes nesta estrutura, o que é preferível porém não exigido.
 
 Esta estrutura exige python 3.11. Talvez tenha que o instalar, assim como outras
 ferramentas e pacotes. Adicionalmente, também já está incluso uma pequena configuração
@@ -112,6 +120,14 @@ sobre Docstring Google.
 Development (TBD)](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development),
 i.e., pequenos incrementos, ao invés de gitflow.
 
+## Convenções
+
+Em todo o projeto, utilize as seguintes convenções de nomes [PEP8](https://peps.python.org/pep-0008/#prescriptive-naming-conventions):
+
+- Funções e variáveis devem seguir snake_case
+- Tipo de dados (typedef e classes) devem seguir PascalCase
+- Constantes e defines devem seguir SCREAMING_SNAKE_CASE
+
 ## Licença
 
 Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um
@@ -132,3 +148,9 @@ Copie aqui a forma de citação do software em formato de desejar e inclua o arq
 Caso tenha, adicione também a citação do paper conceitual sobre a solução.
 
 Inclua também sua referência ao FICO.
+
+## TODO
+
+- Falta adicionar testes e log
+- Mudar pasta padrão de código para src
+- Testar empacotamento

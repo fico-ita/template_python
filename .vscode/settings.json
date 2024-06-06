@@ -1,9 +1,16 @@
 {
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.tabCompletion": "on",
     "editor.formatOnSave": true,
     "editor.rulers": [
         88
     ],
     "editor.wordWrapColumn": 88,
-    "python.formatting.provider": "black",
-    "python.linting.enabled": true
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
 }
