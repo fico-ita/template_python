@@ -1,18 +1,15 @@
 # Template de um projeto Python
 
 No seu repo, utilize este documento para documentar seu pacote XXX no Github.
-Utilize o README.md mais como um ponteiro para a documentação oficial e instruções
-pertinentes.
+Utilize o README.md mais como um ponteiro para a documentação oficial e instruções pertinentes.
 
-Não esqueça de preencher as seções *Como citar* e *Agradecimento*, citando
-explicitamente as empresas parceiras que apoiaram a solução.
+Não esqueça de preencher as seções *Como citar* e *Agradecimento*, citando explicitamente as empresas parceiras que apoiaram a solução.
 
 ## Organização
 
-Mostre rapidamente a organização do seu repo, indicando uma breve descrição dos
-diretórios.
+Mostre rapidamente a organização do seu repo, indicando uma breve descrição dos diretórios.
 
-- `.vscode`: configurações prontas para o dev env via code
+- [`.vscode`](.vscode/): configurações prontas para o dev env via code
 - [`docs`](docs/): diretório com a documentação do pacote. Nesse caso, a documentação em mkdocs.
 - [`fico`](fico/): biblioteca demo
 - `outros`: outros diretórios que seu projeto tiver
@@ -22,29 +19,19 @@ diretórios.
 Este template utiliza:
 
 - Poetry como ferramenta de empacotamento e gerenciador de pacotes
-- [Mkdocs](https://www.mkdocs.org/) para documentação, com template
-  [Material](https://squidfunk.github.io/mkdocs-material/setup/), e
-  [mkdocstrings](https://mkdocstrings.github.io/) para formatação do docstring no
-  [formato Google](https://google.github.io/styleguide/pyguide.html)
+- [Mkdocs](https://www.mkdocs.org/) para documentação, com template [Material](https://squidfunk.github.io/mkdocs-material/setup/), e [mkdocstrings](https://mkdocstrings.github.io/) para formatação do docstring no [formato Google](https://google.github.io/styleguide/pyguide.html)
 - Ruff e Black são usados para estilo de código
 - Pre-commit é utilizado para verificações antes de `commit`
 
-Lembre-se que o pacote deve conter a parte reproduzível de seu projeto. O uso deve ser
-construído como um dos exemplos ou em outro repositório, que utiliza este pacote. Neste
-último caso, seu repo de aplicação irá utilizar o repositório de sua biblioteca via
-*submodule* do git.
+Lembre-se que o pacote deve conter a parte reproduzível de seu projeto. O uso deve ser construído como um dos exemplos ou em outro repositório, que utiliza este pacote. Neste último caso, seu repo de aplicação irá utilizar o repositório de sua biblioteca via *submodule* do git.
 
 ### Por onde começar
 
-O arquivo `pyproject.toml` é o arquivo principal de configuração do pacote. Altere a
-seção `[tool.poetry]`.
+O arquivo `pyproject.toml` é o arquivo principal de configuração do pacote. Altere a seção `[tool.poetry]`.
 
-A estrutura é configurada com um mínimo de funcionalidades para obter bons resultados,
-mas talvez você queira melhorar a configuração conforme compreender as ferramentas.
+A estrutura é configurada com um mínimo de funcionalidades para obter bons resultados, mas talvez você queira melhorar a configuração conforme compreender as ferramentas.
 
-A configuração de pacotes é feita com Poetry ao invés de pip. Crie um virtual
-environment novo para o desenvolvimento da sua biblioteca e instale os pacotes
-necessários via Poetry.
+A configuração de pacotes é feita com Poetry ao invés de pip. Crie um virtual environment novo para o desenvolvimento da sua biblioteca e instale os pacotes necessários via Poetry.
 
 ```bash
 # ative o virtual environment
@@ -65,15 +52,11 @@ poetry add add --group dev nome_biblioteca
 # Dica: ative o ambiente virtual e depois chame o IDE (e.g. code .) para o encontrar
 ```
 
-Ao contrário do tradicional, neste configuração, o código fonte pode ser encontrado
-dentro da pasta (pacote python) `fico`. A documentação na pasta `docs`. Caso desejar,
-exclua o `main.py`, que é apenas um script dummy.
+Ao contrário do tradicional, neste configuração, o código fonte pode ser encontrado dentro da pasta (pacote python) `fico`. A documentação na pasta `docs`. Caso desejar, exclua o `main.py`, que é apenas um script dummy.
 
 Note que não há testes nesta estrutura, o que é preferível porém não exigido.
 
-Esta estrutura exige python 3.11. Talvez tenha que o instalar, assim como outras
-ferramentas e pacotes. Adicionalmente, também já está incluso uma pequena configuração
-para o vscode.
+Esta estrutura exige python 3.11. Talvez tenha que o instalar, assim como outras ferramentas e pacotes. Adicionalmente, também já está incluso uma pequena configuração para o vscode.
 
 ### Commits
 
@@ -84,8 +67,7 @@ Antes de começar a fazer commits, inicialize a configuração do `pre-commit`.
 pre-commit install
 ```
 
-Ao fazer commits, caso receba alguma mensagem de erro, pode-se executar apenas o id que
-resultou em erro.
+Ao fazer commits, caso receba alguma mensagem de erro, pode-se executar apenas o id que resultou em erro.
 Por exemplo, se o id `fix-encoding-pragma` resultou em erro
 
 ```bash
@@ -106,19 +88,15 @@ pre-commit run fix-encoding-pragma
 
 Veja `docs` para servir a documentação.
 
-Um bom exemplo de Docstring no formato Google é o
-[Napoleon's documentation](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+Um bom exemplo de Docstring no formato Google é o [Napoleon's documentation](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
 
 Veja as [seções docstrings na extensão Napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
 
-[Guia Khan](https://github.com/Khan/style-guides/blob/master/style/python.md#docstrings)
-sobre Docstring Google.
+[Guia Khan](https://github.com/Khan/style-guides/blob/master/style/python.md#docstrings) sobre Docstring Google.
 
 ## Git
 
-É aconselhável o uso do git utilizando o fluxo de trabalho conhecido como [Trunk Based
-Development (TBD)](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development),
-i.e., pequenos incrementos, ao invés de gitflow.
+É aconselhável o uso do git utilizando o fluxo de trabalho conhecido como [Trunk Based Development (TBD)](https://cloud.google.com/architecture/devops/devops-tech-trunk-based-development), i.e., pequenos incrementos, ao invés de gitflow.
 
 ## Convenções
 
@@ -130,20 +108,15 @@ Em todo o projeto, utilize as seguintes convenções de nomes [PEP8](https://pep
 
 ## Licença
 
-Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um
-mínimo de qualidade. Inclua as licenças sobre os dados, quando houver, lembrando que
-os dados não devem ter controle de versão, ou seja, não os adicione em uma pasta do
-projeto. Informe seus links de acesso.
+Escolha a licença Apache 2.0 e deixe o repositório como privado, enquanto atinge um mínimo de qualidade. Inclua as licenças sobre os dados, quando houver, lembrando que os dados não devem ter controle de versão, ou seja, não os adicione em uma pasta do projeto. Informe seus links de acesso.
 
 ## Agradecimento
 
-Escolha um bom nome de projeto e adicione os logos dos apoiadores para deixar sua
-documentação com uma imagem mais profissional.
+Escolha um bom nome de projeto e adicione os logos dos apoiadores para deixar sua documentação com uma imagem mais profissional.
 
 ## Como citar
 
-Copie aqui a forma de citação do software em formato de desejar e inclua o arquivo
-[CITATION.cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) no projeto.
+Copie aqui a forma de citação do software em formato de desejar e inclua o arquivo [CITATION.cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) no projeto.
 
 Caso tenha, adicione também a citação do paper conceitual sobre a solução.
 
